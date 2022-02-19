@@ -82,7 +82,7 @@ for index, name in enumerate(myNames):
         for index2, result in enumerate(results):
             for index4, innerresult in enumerate(result):
                 I1.text((0, 30 + index4 * 30 + index2 * 130), str(innerresult), fill=(255, 0, 0), font=font)
-                resultsfile.write(str(result) + ", ")
+            resultsfile.write(str(result) + ", ")
         resultsfile.write("\n")
         img.save('./images/image'+str(index+1)+'.jpg')
 
