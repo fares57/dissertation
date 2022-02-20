@@ -58,6 +58,6 @@ for index, name in enumerate(myNames):
         # resultsfile.write("\n")
     except:
         print('Not Accessible', '\n')
-        resultsfile.write(str(name) + '*' + results[0].replace('\n', ' ') + '\n')
+        resultsfile.write(str(name) + '*' + "Not Accessible" + "\n")
         pass
     resultsfile.close()
