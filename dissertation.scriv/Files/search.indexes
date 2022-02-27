@@ -16,7 +16,7 @@ Some of the following variables are either not needed or without consistency, he
 Profile URL : This Variable shows the name of the account that posted
 Error
 Timestamp : This variable shows the date that the scrape happened
-PostUrl: The URL that with the posst that got scraped
+PostUrl: The URL with the posst that got scraped
 Action: takes only the ‘post’ value
 ImgUrl: The url with the image been posted
 Type: shows the type of the post
@@ -28,23 +28,27 @@ text
 Video (external source)
 Video (linkedin source)
 Word count: how many words is this post
-Readability score (SMOG) (National Institutes of Health (NIH), 2015)   
 PostContent: The main text. Even though this variable will not be imported in the SPSS file, it will be used for readability scores and sentiment analysis.
 LikeCount: How many likes did the post get 
 CommentCount: How many comments did the post get
 PostDate: Date of the post. Unfortunately linkedin does not return a valid date format but only how months ago did this post happen
 ViewCount
-SMOG: This variable analyzes the SMOG readability index rating
-Flesch-Kincaid: Another readability index Variable
-Faces: How many faces are in a picture
-Anger: How likely anger exists
-Sorrow: How likely sorrow exists
-Joy: How likely joy exists
-Surprise: How likely surprise exists
-Phototext: Is there text in the photo?
-Phototext word count: How many words?
-(Phototext brand: Does it contain the brand of the company?)
-Color: dominant color
+SMOG: This variable analyzes the SMOG readability index rating. int
+SMOG diffuculty: grouped: easy/medium/hard
+Flesch-Kincaid: Another readability index Variable. int
+Flesch-Kincaid difficulty: easy/medium/hard
+Faces exist? : 1 for yes, 0 for no
+Faces Number: How many faces are in a picture
+Feelings in photos
+Joy in picture: 1: at least 1 face with joy likely and more, 0 if not
+Anger in picture: 1: at least 1 face with Anger likely and more, 0 if not
+Sorrow in picture: 1: at least 1 face with Sorrow likely and more, 0 if not
+Surprise in picture: 1: at least 1 face with Surprise likely and more, 0 if not
+Phototext: Is there text in the photo? 1 if yes, 0 if no
+Phototext word count: How many words? int
+Phototext brand: Does it contain the brand of the company? 1 if yes, 0 if no
+Phototext brand amount: how many times the brand name appears? int
+Color: dominant color: hex value (string)
 Constrains
 Images analyzed will be only from posts that contain an image
 Research Questions
@@ -107,8 +111,9 @@ Research Questions</Text>
         </Document>
         <Document ID="B196AFE4-BDA7-4712-B820-C49C3993A334"/>
         <Document ID="F14F803E-BA9D-4AC9-8B36-C756AF2D69B2">
-            <Title>Research Questions</Title>
-            <Text>Research Questions
+            <Title>Research Hypotheses</Title>
+            <Text>Research Hypotheses
+
 </Text>
         </Document>
     </Documents>
