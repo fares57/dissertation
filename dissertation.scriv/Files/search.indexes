@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SearchIndexes Version="1.0">
+    <Documents>
+        <Document ID="5DE5963D-AA84-4A40-B5F6-7222D0958D28">
+            <Title>Facebook Scrape</Title>
+        </Document>
+        <Document ID="75CB004A-FFDB-4E73-BE8B-0052EC133B76">
+            <Title>Scrapes</Title>
+        </Document>
+        <Document ID="7B619649-215D-4F7C-8771-18C7431F9644">
+            <Title>Linkedin Scrape</Title>
+            <Text>Linkedin Scrape Specifications and Constrains
+Things Scraped
+Some of the following variables are either not needed or without consistency, hence, they have been stricken through to signify that they will not be used for statistical analysis.
+
+Profile URL : This Variable shows the name of the account that posted
+Error
+Timestamp : This variable shows the date that the scrape happened
+PostUrl: The URL that with the posst that got scraped
+Action: takes only the ‘post’ value
+ImgUrl: The url with the image been posted
+Type: shows the type of the post
+article
+image
+Live video
+poll
+text
+Video (external source)
+Video (linkedin source)
+Word count: how many words is this post
+Readability score (SMOG) (National Institutes of Health (NIH), 2015)   
+PostContent: The main text. Even though this variable will not be imported in the SPSS file, it will be used for readability scores and sentiment analysis.
+LikeCount: How many likes did the post get 
+CommentCount: How many comments did the post get
+PostDate: Date of the post. Unfortunately linkedin does not return a valid date format but only how months ago did this post happen
+ViewCount
+SMOG: This variable analyzes the SMOG readability index rating
+Flesch-Kincaid: Another readability index Variable
+Faces: How many faces are in a picture
+Anger: How likely anger exists
+Sorrow: How likely sorrow exists
+Joy: How likely joy exists
+Surprise: How likely surprise exists
+Phototext: Is there text in the photo?
+Phototext word count: How many words?
+(Phototext brand: Does it contain the brand of the company?)
+Color: dominant color
+Constrains
+Images analyzed will be only from posts that contain an image
+Research Questions
+Is there a difference in engagement metrics by the type of post?
+Do images in posts increase engagement? (compare image and non image posts for engagement)
+How many pictures show a logo?
+Which companies have a logo the most?
+How does logo placement affect engagement?
+Which colors are the most frequent on the companies’ logos?
+Average word count on each image?
+Percentage of images that contain the brand in text
+Correlation between engagement and possible mask on image</Text>
+        </Document>
+        <Document ID="835BCD71-B6CD-4DB4-8F40-EAC35599488C">
+            <Title>Bibliography</Title>
+            <Text>National Institutes of Health (NIH). (2015, May 8). Audience-appropriate information and communicating effectively with people with limited health literacy skills. National Institutes of Health (NIH). https://www.nih.gov/institutes-nih/nih-office-director/office-communications-public-liaison/clear-communication/clear-simple 
+
+
+</Text>
+        </Document>
+        <Document ID="9077913A-143A-489C-A217-D0A70003E026">
+            <Title>Instagram Scrape</Title>
+            <Text>Instagram Scrape Specifications and Constrains
+Things Scraped
+PostUrl
+description
+commentCount
+likeCount
+pubDate
+likedByViewer
+isSidecar
+type
+videoUrl
+viewCount
+profileUrl
+username
+fullName
+imgUrl
+postId
+timestamp
+query
+taggedFullName1
+taggedUsername1
+taggedFullName2
+taggedUsername2
+SMOG: This variable analyzes the SMOG readability index rating
+Flesch-Kincaid: Another readability index Variable
+Faces: How many faces are in a picture
+Anger: How likely anger exists
+Sorrow: How likely sorrow exists
+Joy: How likely joy exists
+Surprise: How likely surprise exists
+Phototext: Is there text in the photo?
+Phototext word count: How many words?
+(Phototext brand: Does it contain the brand of the company?)
+Color: dominant color
+Constrains
+Carousels take only the first picture
+Research Questions</Text>
+        </Document>
+        <Document ID="B196AFE4-BDA7-4712-B820-C49C3993A334"/>
+        <Document ID="F14F803E-BA9D-4AC9-8B36-C756AF2D69B2">
+            <Title>Research Questions</Title>
+            <Text>Research Questions
+</Text>
+        </Document>
+    </Documents>
+</SearchIndexes>

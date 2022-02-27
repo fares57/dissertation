@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ScrivenerProject Template="No" Version="2.0" Identifier="351921F4-A161-4183-9AB6-4D4771A7242D" Creator="SCRWIN-3.1.1.0" Device="LAPTOP-L9J78L8B" Modified="2022-02-27 12:36:56 +0200" ModID="10238F25-B501-47AB-ABC7-62399289A1AA">
+    <Binder>
+        <BinderItem UUID="441E5FAB-4419-4A3D-A165-F5629866B83B" Type="DraftFolder" Created="2022-02-13 10:49:29 +0200" Modified="2022-02-13 13:54:52 +0200">
+            <Title>DISSERTATION</Title>
+            <MetaData>
+                <IncludeInCompile>Yes</IncludeInCompile>
+            </MetaData>
+            <Children>
+                <BinderItem UUID="75CB004A-FFDB-4E73-BE8B-0052EC133B76" Type="Folder" Created="2022-02-13 13:54:56 +0200" Modified="2022-02-13 13:55:01 +0200">
+                    <Title>Scrapes</Title>
+                    <MetaData>
+                        <IncludeInCompile>Yes</IncludeInCompile>
+                    </MetaData>
+                    <TextSettings>
+                        <TextSelection>0,0</TextSelection>
+                    </TextSettings>
+                    <Children>
+                        <BinderItem UUID="7B619649-215D-4F7C-8771-18C7431F9644" Type="Text" Created="2022-02-13 10:49:29 +0200" Modified="2022-02-20 11:09:41 +0200">
+                            <Title>Linkedin Scrape</Title>
+                            <MetaData>
+                                <IncludeInCompile>Yes</IncludeInCompile>
+                            </MetaData>
+                            <TextSettings>
+                                <TextSelection>1199,0</TextSelection>
+                            </TextSettings>
+                        </BinderItem>
+                        <BinderItem UUID="9077913A-143A-489C-A217-D0A70003E026" Type="Text" Created="2022-02-20 10:38:46 +0200" Modified="2022-02-20 11:09:50 +0200">
+                            <Title>Instagram Scrape</Title>
+                            <MetaData>
+                                <IncludeInCompile>Yes</IncludeInCompile>
+                            </MetaData>
+                            <TextSettings>
+                                <TextSelection>724,0</TextSelection>
+                            </TextSettings>
+                        </BinderItem>
+                        <BinderItem UUID="5DE5963D-AA84-4A40-B5F6-7222D0958D28" Type="Text" Created="2022-02-27 12:17:03 +0200" Modified="2022-02-27 12:36:54 +0200">
+                            <Title>Facebook Scrape</Title>
+                            <MetaData>
+                                <IncludeInCompile>Yes</IncludeInCompile>
+                            </MetaData>
+                            <TextSettings>
+                                <TextSelection>0,0</TextSelection>
+                            </TextSettings>
+                        </BinderItem>
+                    </Children>
+                </BinderItem>
+                <BinderItem UUID="F14F803E-BA9D-4AC9-8B36-C756AF2D69B2" Type="Text" Created="2022-02-20 11:07:17 +0200" Modified="2022-02-20 11:07:55 +0200">
+                    <Title>Research Questions</Title>
+                    <MetaData>
+                        <IncludeInCompile>Yes</IncludeInCompile>
+                    </MetaData>
+                    <TextSettings>
+                        <TextSelection>19,0</TextSelection>
+                    </TextSettings>
+                </BinderItem>
+            </Children>
+        </BinderItem>
+        <BinderItem UUID="835BCD71-B6CD-4DB4-8F40-EAC35599488C" Type="Text" Created="2022-02-13 14:01:51 +0200" Modified="2022-02-13 14:04:07 +0200">
+            <Title>Bibliography</Title>
+            <MetaData>
+                <IncludeInCompile>Yes</IncludeInCompile>
+            </MetaData>
+            <TextSettings>
+                <TextSelection Caret="325">201,124</TextSelection>
+            </TextSettings>
+        </BinderItem>
+        <BinderItem UUID="012344F0-F9A4-459C-A342-0A3ABFB7E947" Type="ResearchFolder" Created="2022-02-13 10:49:29 +0200" Modified="2022-02-13 10:49:29 +0200">
+            <Title>Research</Title>
+            <MetaData>
+                <IncludeInCompile>Yes</IncludeInCompile>
+            </MetaData>
+        </BinderItem>
+        <BinderItem UUID="0CDEEB9A-0F39-4B54-A165-428494FA4F69" Type="TrashFolder" Created="2022-02-13 10:49:29 +0200" Modified="2022-02-13 10:49:29 +0200">
+            <Title>Trash</Title>
+            <MetaData>
+                <IncludeInCompile>Yes</IncludeInCompile>
+            </MetaData>
+            <Children>
+                <BinderItem UUID="B196AFE4-BDA7-4712-B820-C49C3993A334" Type="Folder" Created="2022-02-13 13:54:23 +0200" Modified="2022-02-13 13:54:23 +0200">
+                    <MetaData>
+                        <IncludeInCompile>Yes</IncludeInCompile>
+                    </MetaData>
+                    <TextSettings>
+                        <TextSelection>0,0</TextSelection>
+                    </TextSettings>
+                </BinderItem>
+            </Children>
+        </BinderItem>
+    </Binder>
+    <Collections>
+        <Collection Type="Binder" ID="E8371BE4-C570-47F8-A855-13A9C3CB40A5" Color="0.941176 0.937255 0.956863">
+            <Title>Binder</Title>
+        </Collection>
+        <Collection Type="RecentSearch" ID="981ADA21-1C2D-460A-9DED-ED7C51229491" Color="0.901961 0.901961 0.980392">
+            <Title>Search Results</Title>
+            <SearchSettings Operator="Any" Type="All" Scope="All" CompileSetting="All" CaseSensitive="No" IgnoreDiacritics="No"></SearchSettings>
+        </Collection>
+    </Collections>
+    <SectionTypes>
+        <TypeDefinitions>
+            <Type ID="F8F65B3E-7FAB-4777-9658-BA5608F2F493">Heading</Type>
+            <Type ID="582C432D-153D-4225-A39B-1F7158363850">Sub-Heading</Type>
+            <Type ID="2501982F-B465-4748-86B3-F07E3725BF72">Section</Type>
+        </TypeDefinitions>
+        <LevelTypes>
+            <Folders>
+                <Type>F8F65B3E-7FAB-4777-9658-BA5608F2F493</Type>
+            </Folders>
+            <Containers>
+                <Type>2501982F-B465-4748-86B3-F07E3725BF72</Type>
+            </Containers>
+            <Files>
+                <Type>2501982F-B465-4748-86B3-F07E3725BF72</Type>
+            </Files>
+        </LevelTypes>
+    </SectionTypes>
+    <LabelSettings>
+        <Title>Label</Title>
+        <DefaultLabelID>-1</DefaultLabelID>
+        <Labels>
+            <Label ID="-1">No Label</Label>
+            <Label ID="0" Color="0.993500 0.701213 0.732586">Red</Label>
+            <Label ID="1" Color="0.995422 0.790951 0.652384">Orange</Label>
+            <Label ID="2" Color="0.997726 0.892729 0.652567">Yellow</Label>
+            <Label ID="3" Color="0.715862 0.948714 0.697688">Green</Label>
+            <Label ID="4" Color="0.702312 0.888273 0.974258">Blue</Label>
+            <Label ID="5" Color="0.957565 0.766751 0.999619">Purple</Label>
+        </Labels>
+    </LabelSettings>
+    <StatusSettings>
+        <Title>Status</Title>
+        <DefaultStatusID>-1</DefaultStatusID>
+        <StatusItems>
+            <Status ID="-1">No Status</Status>
+            <Status ID="0">To Do</Status>
+            <Status ID="1">In Progress</Status>
+            <Status ID="2">First Draft</Status>
+            <Status ID="3">Revised Draft</Status>
+            <Status ID="4">Final Draft</Status>
+            <Status ID="5">Done</Status>
+        </StatusItems>
+    </StatusSettings>
+    <ProjectTargets Notify="No">
+        <DraftTarget Type="Words" CountIncludedOnly="Yes" CurrentCompileGroupOnly="No" Deadline="2022-02-13 10:49:29 +0200" IgnoreDeadline="Yes">0</DraftTarget>
+        <SessionTarget Type="Words" CountDraftOnly="No" AllowNegatives="No" ResetType="Time" ResetTime="01:00" DeterminedFromDeadline="No" CanWriteOnDeadlineDate="Yes" WritingDays="">0</SessionTarget>
+        <PreviousSession Words="0" Characters="0" Date="2022-02-27 12:36:56 +0200"/>
+    </ProjectTargets>
+    <RecentWritingHistory Date="2022-02-27 00:00:00 +0200">
+        <DraftWordCount>0</DraftWordCount>
+        <DraftCharCount>0</DraftCharCount>
+        <OtherWordCount>0</OtherWordCount>
+        <OtherCharCount>0</OtherCharCount>
+    </RecentWritingHistory>
+    <PrintSettings PaperSize="612.0,792.0" LeftMargin="72.0" RightMargin="72.0" TopMargin="72.0" BottomMargin="72.0" PaperType="na-letter" Orientation="Portrait" ScaleFactor="1.0" HorizontallyCentered="Yes" VerticallyCentered="Yes" Collates="No" PagesAcross="1" PagesDown="1"/>
+</ScrivenerProject>
