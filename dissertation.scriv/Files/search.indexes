@@ -49,6 +49,8 @@ Phototext word count: How many words? int
 Phototext brand: Does it contain the brand of the company? 1 if yes, 0 if no
 Phototext brand amount: how many times the brand name appears? int
 Color: dominant color: hex value (string)
+Hashtags: how many hashtags?
+Mentions: how many mentions?
 Constrains
 Images analyzed will be only from posts that contain an image
 Research Questions
