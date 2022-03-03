@@ -69,10 +69,10 @@ def get_rgb(color):
         print(chalk.bg_hex(chosen_color).black("green"))
     elif far_from_borders(red, green, blue) and (bigger(blue, red)) and (bigger(blue, green)) and (triad_difference(blue, red)) and (triad_difference(blue, green)):
         print(chalk.bg_hex(chosen_color).black("blue"))
-    elif far_from_borders(red, green, blue) and (not triad_difference(red, green)) and (bigger(red, blue) or (bigger(green, blue))) and not triad_difference(blue, red) and not triad_difference(blue, green):
+    elif far_from_borders(red, green, blue) and (not triad_difference(red, green)) and (bigger(red, blue) or (bigger(green, blue))):
         print(chalk.bg_hex(chosen_color).black("yellow"))
     elif far_from_borders(red, green, blue) and (not triad_difference(blue, green)) and (bigger(blue, red) or (bigger(green, red))):
-        print(chalk.bg_hex(chosen_color).black("cyan"))-
+        print(chalk.bg_hex(chosen_color).black("cyan"))
     elif far_from_borders(red, green, blue) and (not triad_difference(blue, red)) and ((bigger(blue, green)) or (bigger(red, green))):
         print(chalk.bg_hex(chosen_color).black("magenta"))
     else:
