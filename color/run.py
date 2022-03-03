@@ -37,7 +37,7 @@ for line in Lines:
 
         if len(line) == 5:
             print("given hex value is 5 digit, need 6 digit hex")
-            list_.append(line)
+            list_.append("Wrong_color_code")
             continue
         else:
             rgb = ImageColor.getcolor('#'+line, "RGB")
