@@ -13,7 +13,7 @@
 Things Scraped
 Some of the following variables are either not needed or without consistency, hence, they have been stricken through to signify that they will not be used for statistical analysis.
 
-Profile URL : This Variable shows the name of the account that posted
+Compay Name - Profile URL : This Variable shows the name of the account that posted
 Error
 Timestamp : This variable shows the date that the scrape happened
 PostUrl: The URL with the posst that got scraped
@@ -37,15 +37,16 @@ SMOG: This variable analyzes the SMOG readability index rating. int
 SMOG diffuculty: grouped: easy/medium/hard
 Flesch-Kincaid: Another readability index Variable. int
 Flesch-Kincaid difficulty: easy/medium/hard
+Agreement between readability ratings 
 Faces exist? : 1 for yes, 0 for no
-Faces Number: How many faces are in a picture
+Faces Number: How many faces are in a picture (blanks = not accesssible = reposted)
 Feelings in photos
 Joy in picture: 1: at least 1 face with joy likely and more, 0 if not
 Anger in picture: 1: at least 1 face with Anger likely and more, 0 if not
 Sorrow in picture: 1: at least 1 face with Sorrow likely and more, 0 if not
 Surprise in picture: 1: at least 1 face with Surprise likely and more, 0 if not
 Phototext: Is there text in the photo? 1 if yes, 0 if no
-Phototext word count: How many words? int
+Phototext word count: How many words? ints
 Phototext brand: Does it contain the brand of the company? 1 if yes, 0 if no
 Phototext brand amount: how many times the brand name appears? int
 Color: dominant color: hex value (string)
@@ -53,6 +54,8 @@ Hashtags: how many hashtags?
 Mentions: how many mentions?
 Constrains
 Images analyzed will be only from posts that contain an image
+Talk about not accessible (due to reposting)
+Talk about wrong color code (unknown error during the downloading of data)
 Research Questions
 Is there a difference in engagement metrics by the type of post?
 Do images in posts increase engagement? (compare image and non image posts for engagement)
