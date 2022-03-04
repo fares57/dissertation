@@ -35,7 +35,7 @@ for line in Lines:
         continue
     else:
 
-        if len(line) == 5:
+        if len(line) == 5 or len(line) == 4:
             print("given hex value is 5 digit, need 6 digit hex")
             list_.append("Wrong_color_code")
             continue

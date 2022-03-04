@@ -48,10 +48,8 @@ Surprise in picture: 1: at least 1 face with Surprise likely and more, 0 if not
 Phototext: Is there text in the photo? 1 if yes, 0 if no
 Phototext word count: How many words? ints
 Phototext brand: Does it contain the brand of the company? 1 if yes, 0 if no
-Phototext brand amount: how many times the brand name appears? int
 Color: dominant color: hex value (string)
 Hashtags: how many hashtags?
-Mentions: how many mentions?
 Constrains
 Images analyzed will be only from posts that contain an image
 Talk about not accessible (due to reposting)
@@ -115,6 +113,44 @@ Carousels take only the first picture
 Research Questions</Text>
         </Document>
         <Document ID="B196AFE4-BDA7-4712-B820-C49C3993A334"/>
+        <Document ID="CEA5B0D1-B201-4044-9DC4-3D1BD77C42C7">
+            <Title>upwork</Title>
+            <Text>Hello James! 
+
+This is the final Excel for you. Please translate all the included values to SPSS according to your needs. (final-sheet.xls)
+
+Also, you can get ideas from the chapters 5 and 6 of a well written similar dissertation (final draft DE_MBA_Vasileiadou (3).pdf)
+
+Below are the explanations of each column of the final-sheet.xls file
+
+Company Name: This is the name of the company that made the post
+postUrl: This is the URL of the post
+Type: The type of the post (article, image, live video etc)
+word count: Number of words of the POST TEXT
+likeCount: Number of likes that this post received
+commentCount: Number of comments that this post received
+SMOG: Smog readability index raw number in float
+SMOG RANK: Smog index classified as easy, medium, hard 
+Flesch Kincaid Grade Level: Flesch readability index raw number in float
+Flesch Kincaid RANK: Flesch index classified as easy, medium, hard
+Agreement between readability ratings
+faces no: Number of faces discovered in the image of the picture of the post (max 10)
+face exist: If at least 1 face exists in the image
+SORROW: If at least a sorrowful face exists
+SURPRICE: If at least a surprised face exists
+JOY: if at least a joyful face exists
+ANGER: if at least an angry face exists
+Text Existance in Photo: If the photo has text in it
+Image Text Word Count: how many words is the IMAGE TEXT
+Brand Name in Photo Text: If there is the name of this company in the image text
+Dominant Color Names in Image: The name of the dominant color in this image
+Number of Hashtags in Post Text: How many hashtags are in the POST TEXT.
+
+We'd like all the above as parts of various statistical analyses. 
+Please study the data and suggest us hypotheses and research questions so we can come up with the final questions so you can begin. 
+
+thank you.</Text>
+        </Document>
         <Document ID="F14F803E-BA9D-4AC9-8B36-C756AF2D69B2">
             <Title>Research Hypotheses</Title>
             <Text>Research Hypotheses

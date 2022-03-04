@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ScrivenerProject Template="No" Version="2.0" Identifier="351921F4-A161-4183-9AB6-4D4771A7242D" Creator="SCRWIN-3.1.1.0" Device="LAPTOP-L9J78L8B" Modified="2022-03-03 21:25:55 +0200" ModID="3DEFDE38-7106-4CDE-8E4D-E167D37DF7CF">
+<ScrivenerProject Template="No" Version="2.0" Identifier="351921F4-A161-4183-9AB6-4D4771A7242D" Creator="SCRWIN-3.1.1.0" Device="LAPTOP-L9J78L8B" Modified="2022-03-04 20:57:59 +0200" ModID="1B862B24-A566-41AF-90E7-9B063AD4F333">
     <Binder>
         <BinderItem UUID="441E5FAB-4419-4A3D-A165-F5629866B83B" Type="DraftFolder" Created="2022-02-13 10:49:29 +0200" Modified="2022-02-13 13:54:52 +0200">
             <Title>DISSERTATION</Title>
@@ -16,13 +16,13 @@
                         <TextSelection>0,0</TextSelection>
                     </TextSettings>
                     <Children>
-                        <BinderItem UUID="7B619649-215D-4F7C-8771-18C7431F9644" Type="Text" Created="2022-02-13 10:49:29 +0200" Modified="2022-03-03 21:25:52 +0200">
+                        <BinderItem UUID="7B619649-215D-4F7C-8771-18C7431F9644" Type="Text" Created="2022-02-13 10:49:29 +0200" Modified="2022-03-04 20:39:39 +0200">
                             <Title>Linkedin Scrape</Title>
                             <MetaData>
                                 <IncludeInCompile>Yes</IncludeInCompile>
                             </MetaData>
                             <TextSettings>
-                                <TextSelection>1818,0</TextSelection>
+                                <TextSelection>2009,0</TextSelection>
                             </TextSettings>
                         </BinderItem>
                         <BinderItem UUID="9077913A-143A-489C-A217-D0A70003E026" Type="Text" Created="2022-02-20 10:38:46 +0200" Modified="2022-02-20 11:09:50 +0200">
@@ -41,6 +41,15 @@
                             </MetaData>
                             <TextSettings>
                                 <TextSelection>0,0</TextSelection>
+                            </TextSettings>
+                        </BinderItem>
+                        <BinderItem UUID="CEA5B0D1-B201-4044-9DC4-3D1BD77C42C7" Type="Text" Created="2022-03-04 20:57:49 +0200" Modified="2022-03-04 20:57:55 +0200">
+                            <Title>upwork</Title>
+                            <MetaData>
+                                <IncludeInCompile>Yes</IncludeInCompile>
+                            </MetaData>
+                            <TextSettings>
+                                <TextSelection>1797,0</TextSelection>
                             </TextSettings>
                         </BinderItem>
                     </Children>
@@ -144,11 +153,11 @@
     <ProjectTargets Notify="No">
         <DraftTarget Type="Words" CountIncludedOnly="Yes" CurrentCompileGroupOnly="No" Deadline="2022-02-13 10:49:29 +0200" IgnoreDeadline="Yes">0</DraftTarget>
         <SessionTarget Type="Words" CountDraftOnly="No" AllowNegatives="No" ResetType="Time" ResetTime="01:00" DeterminedFromDeadline="No" CanWriteOnDeadlineDate="Yes" WritingDays="">0</SessionTarget>
-        <PreviousSession Words="29" Characters="212" Date="2022-03-03 21:25:55 +0200"/>
+        <PreviousSession Words="318" Characters="1797" Date="2022-03-04 20:57:59 +0200"/>
     </ProjectTargets>
-    <RecentWritingHistory Date="2022-03-03 00:00:00 +0200">
-        <DraftWordCount>29</DraftWordCount>
-        <DraftCharCount>212</DraftCharCount>
+    <RecentWritingHistory Date="2022-03-04 00:00:00 +0200">
+        <DraftWordCount>303</DraftWordCount>
+        <DraftCharCount>1701</DraftCharCount>
         <OtherWordCount>0</OtherWordCount>
         <OtherCharCount>0</OtherCharCount>
     </RecentWritingHistory>
