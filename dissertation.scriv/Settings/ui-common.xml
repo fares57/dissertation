@@ -9,7 +9,7 @@
             <ItemID>75CB004A-FFDB-4E73-BE8B-0052EC133B76</ItemID>
         </ExpandedItems>
         <Selection>
-            <ItemID>CEA5B0D1-B201-4044-9DC4-3D1BD77C42C7</ItemID>
+            <ItemID>5DE5963D-AA84-4A40-B5F6-7222D0958D28</ItemID>
         </Selection>
         <SearchResultsSort Titles="Ascending" Dates="Ascending">None</SearchResultsSort>
     </Binder>
@@ -94,7 +94,7 @@
                 <PageLayout Facing="No">No</PageLayout>
                 <TypewriterScrolling>No</TypewriterScrolling>
                 <LineNumbers Interval="1">No</LineNumbers>
-                <Selection>1797,0</Selection>
+                <Selection>0,2915</Selection>
             </Text>
             <Outliner>
                 <Columns>
@@ -135,9 +135,9 @@
                 <CurrentViewMode>Single</CurrentViewMode>
                 <SelectionAffects>Current</SelectionAffects>
                 <Content>
-                    <ItemID>CEA5B0D1-B201-4044-9DC4-3D1BD77C42C7</ItemID>
+                    <ItemID>5DE5963D-AA84-4A40-B5F6-7222D0958D28</ItemID>
                 </Content>
-                <NavigationHistory CurrentIndex="36">
+                <NavigationHistory CurrentIndex="40">
                     <HistoryItem Type="BinderItems" ViewMode="Single">7B619649-215D-4F7C-8771-18C7431F9644</HistoryItem>
                     <HistoryItem Type="BinderItems" ViewMode="Single">835BCD71-B6CD-4DB4-8F40-EAC35599488C</HistoryItem>
                     <HistoryItem Type="BinderItems" ViewMode="Single">7B619649-215D-4F7C-8771-18C7431F9644</HistoryItem>
@@ -175,6 +175,10 @@
                     <HistoryItem Type="BinderItems" ViewMode="Single">F14F803E-BA9D-4AC9-8B36-C756AF2D69B2</HistoryItem>
                     <HistoryItem Type="BinderItems" ViewMode="Corkboard">75CB004A-FFDB-4E73-BE8B-0052EC133B76</HistoryItem>
                     <HistoryItem Type="BinderItems" ViewMode="Single">CEA5B0D1-B201-4044-9DC4-3D1BD77C42C7</HistoryItem>
+                    <HistoryItem Type="BinderItems" ViewMode="Single">5DE5963D-AA84-4A40-B5F6-7222D0958D28</HistoryItem>
+                    <HistoryItem Type="BinderItems" ViewMode="Single">9077913A-143A-489C-A217-D0A70003E026</HistoryItem>
+                    <HistoryItem Type="BinderItems" ViewMode="Single">CEA5B0D1-B201-4044-9DC4-3D1BD77C42C7</HistoryItem>
+                    <HistoryItem Type="BinderItems" ViewMode="Single">5DE5963D-AA84-4A40-B5F6-7222D0958D28</HistoryItem>
                 </NavigationHistory>
             </View>
             <Text>

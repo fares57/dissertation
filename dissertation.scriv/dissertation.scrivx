@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ScrivenerProject Template="No" Version="2.0" Identifier="351921F4-A161-4183-9AB6-4D4771A7242D" Creator="SCRWIN-3.1.1.0" Device="LAPTOP-L9J78L8B" Modified="2022-03-04 20:57:59 +0200" ModID="1B862B24-A566-41AF-90E7-9B063AD4F333">
+<ScrivenerProject Template="No" Version="2.0" Identifier="351921F4-A161-4183-9AB6-4D4771A7242D" Creator="SCRWIN-3.1.1.0" Device="LAPTOP-L9J78L8B" Modified="2022-03-05 16:40:46 +0200" ModID="0EFF0FE3-3A15-4624-9395-0B87AE6FBBD1">
     <Binder>
         <BinderItem UUID="441E5FAB-4419-4A3D-A165-F5629866B83B" Type="DraftFolder" Created="2022-02-13 10:49:29 +0200" Modified="2022-02-13 13:54:52 +0200">
             <Title>DISSERTATION</Title>
@@ -31,16 +31,16 @@
                                 <IncludeInCompile>Yes</IncludeInCompile>
                             </MetaData>
                             <TextSettings>
-                                <TextSelection>724,0</TextSelection>
+                                <TextSelection>3,0</TextSelection>
                             </TextSettings>
                         </BinderItem>
-                        <BinderItem UUID="5DE5963D-AA84-4A40-B5F6-7222D0958D28" Type="Text" Created="2022-02-27 12:17:03 +0200" Modified="2022-02-27 12:36:54 +0200">
+                        <BinderItem UUID="5DE5963D-AA84-4A40-B5F6-7222D0958D28" Type="Text" Created="2022-02-27 12:17:03 +0200" Modified="2022-03-05 16:31:39 +0200">
                             <Title>Facebook Scrape</Title>
                             <MetaData>
                                 <IncludeInCompile>Yes</IncludeInCompile>
                             </MetaData>
                             <TextSettings>
-                                <TextSelection>0,0</TextSelection>
+                                <TextSelection>0,2915</TextSelection>
                             </TextSettings>
                         </BinderItem>
                         <BinderItem UUID="CEA5B0D1-B201-4044-9DC4-3D1BD77C42C7" Type="Text" Created="2022-03-04 20:57:49 +0200" Modified="2022-03-04 20:57:55 +0200">
@@ -153,11 +153,11 @@
     <ProjectTargets Notify="No">
         <DraftTarget Type="Words" CountIncludedOnly="Yes" CurrentCompileGroupOnly="No" Deadline="2022-02-13 10:49:29 +0200" IgnoreDeadline="Yes">0</DraftTarget>
         <SessionTarget Type="Words" CountDraftOnly="No" AllowNegatives="No" ResetType="Time" ResetTime="01:00" DeterminedFromDeadline="No" CanWriteOnDeadlineDate="Yes" WritingDays="">0</SessionTarget>
-        <PreviousSession Words="318" Characters="1797" Date="2022-03-04 20:57:59 +0200"/>
+        <PreviousSession Words="497" Characters="2915" Date="2022-03-05 16:40:46 +0200"/>
     </ProjectTargets>
-    <RecentWritingHistory Date="2022-03-04 00:00:00 +0200">
-        <DraftWordCount>303</DraftWordCount>
-        <DraftCharCount>1701</DraftCharCount>
+    <RecentWritingHistory Date="2022-03-05 00:00:00 +0200">
+        <DraftWordCount>497</DraftWordCount>
+        <DraftCharCount>2915</DraftCharCount>
         <OtherWordCount>0</OtherWordCount>
         <OtherCharCount>0</OtherCharCount>
     </RecentWritingHistory>

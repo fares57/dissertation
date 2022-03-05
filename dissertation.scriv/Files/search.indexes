@@ -3,6 +3,16 @@
     <Documents>
         <Document ID="5DE5963D-AA84-4A40-B5F6-7222D0958D28">
             <Title>Facebook Scrape</Title>
+            <Text>Facebook Scraping
+Restricions
+Facebook scraping was the major goal. Unfortunately we run into problems because of the way the FB website is designed. Facebook has been developed with a very protective approach. Thus, scraping data is a very hard procedure. 
+When it comes to scraping profiles, there are some apps out there that can do the job of mining basic information that is being given freely by the people. Such applications are Octoparse, Phantomburst and others. Same thing happens with Facebook groups where you can mine public posts and comments by users.
+Unfortunately, this doesn’t happen with Facebook Pages. For unknown reasons, Facebook pages’ data are not being served freely by Facebook’s API and hence, no free or paid web software gave us the opportunity to mine such data, nor were we able to serve ourselves from their API. The only think you can have from Pages API is posts data from pages you actually own or control. Being the moderator of the biggest Pharma FB pages was beyond the scope of this dissertation!
+Under such circumstances, there was no other way but to create a scraper. A nice tool is the webscraper chrome plugin which has a very easy to use interface that let’s you mine data and make automations. Another tool that we used for scraping was octoparse. 
+Octoparse has a windows based interface where you select elements and octoparse automatically scrapes all the elements like the ones you selected.This way, you can easily and without any coding knowledge automate a procedure and scrape almost any website you want. But Facebook has some irregularities. First of all, Facebook has random class names for its posts. This way you cannot dictate any class name to be scraped because no element has the same name in the html structure. Octoparse has some AI mechanisms and it managed to understand the similarities but up to a point. We still had a major loss of scraped elements.
+Webscraper Chrome plugin was much better at this job, finding all elements after an automatic scrape to the bottom. But then, then problem was that we couldn’t have the like, comment and share count aligned with each element. The results were terrible and it was impossible to continue with this tool.
+Another alternative would be to scrape data by ourselves using Python modules but we wouldn’t be able to bypass the 2FA and confirmation procedures of FB with a testing browser (selenium).
+The last resort was to device some vanilla Javascript directives in order to scrape that data. We managed to get the correct information for each post but then, the problem was that as the chrome browser was automatically scrolling, the Facebook was creating the new posts on the fly and we couldnt reference them. The result was dissapointing and the only way we could solve was maybe trying an sync auto scrolling function with delays but due to the lack of time we had to abandon the FB data mining.</Text>
         </Document>
         <Document ID="75CB004A-FFDB-4E73-BE8B-0052EC133B76">
             <Title>Scrapes</Title>
