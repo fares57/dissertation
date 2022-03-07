@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt # data viz
 import squarify                 # generate treemap
 import plotly.express as px
 
-df = pd.read_csv('colors-names-freqs.csv')
+df = pd.read_excel('colors-names-freqs.xlsx', 'sanofi')
 
 # print("Column headings:")
 # print(df.columns)
@@ -24,12 +24,14 @@ hexnameslist = []
 for hexname in df.hexnames:
     hexnameslist.append(hexname)
 
-print(type(hexnameslist))
+for index, color in enumerate(df.colors):
+    print(color,":",df.freqs[index],":", df.hexnames[index])
 
 
-
-fig = px.treemap(df, path=['colors'],values='freqs', width=800, height=400)
+fig = px.treemap(df, path=['colors'], values='freqs', labels = 'colors', width=800, height=400)
+fig.update_traces(textinfo='label+value')
+fig.update_traces(count = 'branches')
 fig.update_layout(
     treemapcolorway = list(hexnameslist),
-    margin = dict(t=50, l=25, r=25, b=25))
+    margin = dict(t=10, l=10, r=10, b=10))
 fig.show()

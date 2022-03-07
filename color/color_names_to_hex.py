@@ -1,3 +1,4 @@
+from unittest import result
 import matplotlib               # data viz
 
 
@@ -9,4 +10,7 @@ with open('color_names.txt', 'r') as f:
 for color in colors:
     print(color.strip('\n'))
     resultsfile.write(matplotlib.colors.cnames[color.strip('\n')]+'\n')
+
+f.close()
+resultsfile.close()
 
