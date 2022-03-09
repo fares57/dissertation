@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt # data viz
 import squarify                 # generate treemap
 import plotly.express as px
 
-df = pd.read_excel('colors-names-freqs.xlsx', 'sanofi')
+df = pd.read_excel('colors-names-freqs.xlsx', 'bristol')
 
 # print("Column headings:")
 # print(df.columns)
@@ -30,7 +30,7 @@ for index, color in enumerate(df.colors):
 
 fig = px.treemap(df, path=['colors'], values='freqs', labels = 'colors', width=800, height=400)
 fig.update_traces(textinfo='label+value')
-fig.update_traces(count = 'branches')
+# fig.update_traces(count = 'branches')
 fig.update_layout(
     treemapcolorway = list(hexnameslist),
     margin = dict(t=10, l=10, r=10, b=10))
