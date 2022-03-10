@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt # data viz
 import squarify                 # generate treemap
 import plotly.express as px
 
-df = pd.read_excel('colors-names-freqs.xlsx', 'bristol')
+df = pd.read_excel('colors-names-freqs.xlsx', 'astellas')
 
 # print("Column headings:")
 # print(df.columns)

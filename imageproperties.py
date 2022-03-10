@@ -29,8 +29,10 @@ def detect_properties_uri(uri):
 
     response = client.image_properties(image=image)
     props = response.image_properties_annotation
-    hex = rgb_to_hex(int(props.dominant_colors.colors[0].color.red), int(props.dominant_colors.colors[0].color.green), int(props.dominant_colors.colors[0].color.blue))
-    result = [hex, props.dominant_colors.colors[0].score]
+    for index2, color2 in enumerate(props.dominant_colors.colors):
+        result.append([])
+        hex = rgb_to_hex(int(color2.color.red), int(color2.color.green), int(color2.color.blue))
+        result[index2] = [hex, color2.score]
     print('Score is: ', result)
     print('Properties:')
 

@@ -18,7 +18,7 @@ tan
 silver
 Not Accessible
 dodgerblue
-slateblue
+Wrong_color_code
 steelblue
 Not Accessible
 black
@@ -275,7 +275,7 @@ Not Accessible
 Wrong_color_code
 Not Accessible
 Not Accessible
-darkgray
+Wrong_color_code
 Wrong_color_code
 Not Accessible
 Not Accessible
@@ -782,7 +782,7 @@ darkolivegreen
 Not Accessible
 Wrong_color_code
 Not Accessible
-darkgray
+Wrong_color_code
 bisque
 Not Accessible
 Not Accessible
@@ -1572,7 +1572,7 @@ whitesmoke
 silver
 silver
 Not Accessible
-indianred
+Wrong_color_code
 Not Accessible
 Not Accessible
 teal
@@ -1616,7 +1616,7 @@ Not Accessible
 Wrong_color_code
 slategray
 snow
-lightsalmon
+Wrong_color_code
 lightsteelblue
 Wrong_color_code
 crimson
@@ -2222,7 +2222,7 @@ steelblue
 lightsteelblue
 darkslategray
 Not Accessible
-silver
+Wrong_color_code
 Not Accessible
 whitesmoke
 Not Accessible
@@ -2343,7 +2343,7 @@ black
 gainsboro
 Not Accessible
 Not Accessible
-rosybrown
+Wrong_color_code
 Not Accessible
 Not Accessible
 Not Accessible
@@ -2400,7 +2400,7 @@ Not Accessible
 Not Accessible
 Not Accessible
 Wrong_color_code
-gray
+Wrong_color_code
 Not Accessible
 whitesmoke
 Not Accessible
@@ -2599,7 +2599,7 @@ Not Accessible
 Wrong_color_code
 khaki
 linen
-darkgray
+Wrong_color_code
 brown
 Not Accessible
 Wrong_color_code
@@ -2640,9 +2640,9 @@ darkseagreen
 gainsboro
 Not Accessible
 Not Accessible
-tan
+Wrong_color_code
 yellowgreen
-tan
+Wrong_color_code
 silver
 whitesmoke
 sienna
@@ -2676,7 +2676,7 @@ gainsboro
 silver
 lightslategray
 black
-darkgray
+Wrong_color_code
 Wrong_color_code
 yellowgreen
 firebrick
@@ -3029,7 +3029,7 @@ gray
 yellowgreen
 darkkhaki
 yellowgreen
-darkgray
+Wrong_color_code
 silver
 darkgray
 silver
@@ -4658,7 +4658,7 @@ blanchedalmond
 Wrong_color_code
 Not Accessible
 Not Accessible
-dimgray
+Wrong_color_code
 Not Accessible
 Not Accessible
 Wrong_color_code
@@ -4814,7 +4814,7 @@ Not Accessible
 Not Accessible
 Wrong_color_code
 Not Accessible
-darkgray
+Wrong_color_code
 Wrong_color_code
 Wrong_color_code
 dimgray
@@ -4989,7 +4989,7 @@ Not Accessible
 Not Accessible
 Not Accessible
 Not Accessible
-burlywood
+Wrong_color_code
 Not Accessible
 deeppink
 Not Accessible
@@ -5108,7 +5108,7 @@ Not Accessible
 darkolivegreen
 Not Accessible
 Not Accessible
-aquamarine
+Wrong_color_code
 snow
 Wrong_color_code
 lavender
@@ -5475,7 +5475,7 @@ Not Accessible
 Not Accessible
 Not Accessible
 Not Accessible
-silver
+Wrong_color_code
 sandybrown
 lavender
 darkslategray
@@ -5639,7 +5639,7 @@ darkslategray
 darkslateblue
 Not Accessible
 salmon
-slategray
+Wrong_color_code
 lightsteelblue
 Wrong_color_code
 Not Accessible
@@ -6006,7 +6006,7 @@ darkgray
 Not Accessible
 lightsteelblue
 chocolate
-lightslategray
+Wrong_color_code
 blanchedalmond
 blanchedalmond
 Not Accessible
@@ -6109,10 +6109,10 @@ Not Accessible
 Not Accessible
 gray
 darkslateblue
-tan
+Wrong_color_code
 slateblue
 Not Accessible
-wheat
+Wrong_color_code
 Wrong_color_code
 slategray
 Wrong_color_code
@@ -6158,7 +6158,7 @@ snow
 Not Accessible
 Not Accessible
 Not Accessible
-navajowhite
+Wrong_color_code
 Not Accessible
 dodgerblue
 lightslategray
