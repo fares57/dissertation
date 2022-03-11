@@ -31,7 +31,7 @@ for line in Lines:
     line = line.strip()
     count += 1
     if line == "Not Accessible":
-        list_.append(line)
+        # list_.append(line)
         continue
     else:
 
