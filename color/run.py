@@ -3,7 +3,7 @@ from PIL import ImageColor
 
 def  find_closest_color(rgb_color):
     min_colours = {}
-    for key, name in webcolors.CSS3_HEX_TO_NAMES.items():
+    for key, name in webcolors.HTML4_HEX_TO_NAMES.items():
         r_c, g_c, b_c = webcolors.hex_to_rgb(key)
         rd = (r_c - rgb_color[0]) ** 2
         gd = (g_c - rgb_color[1]) ** 2
@@ -31,13 +31,13 @@ for line in Lines:
     line = line.strip()
     count += 1
     if line == "Not Accessible":
-        # list_.append(line)
+        list_.append(line)
         continue
     else:
 
         if len(line) != 6:
             print("given hex value is 5 digit, need 6 digit hex")
-            # list_.append("Wrong_color_code")
+            list_.append("Wrong_color_code")
             continue
         else:
             rgb = ImageColor.getcolor('#'+line, "RGB")
