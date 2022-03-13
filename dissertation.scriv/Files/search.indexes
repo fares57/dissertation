@@ -1,6 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <SearchIndexes Version="1.0">
     <Documents>
+        <Document ID="2169599F-99D8-4549-B6FC-C5C5F8C75DDA">
+            <Title>Notes on Seikh's Work</Title>
+            <Text>Comments are directly affected by the post type
+Likes are not directly affected by the post type
+Hash tags are not directly affected by the post type
+like is not directly affected by the word count
+Comments are not affected by word count
+Hash tags are affected by word count
+Likes are negative affected by SMOG
+Comments are negatively affected by SMOG
+Hash tags are affected by SMOG but this metric will may not be used because “#” may have affected the readability ratings
+Likes are affected by Flesch
+Comments are affected by Flesch
+</Text>
+        </Document>
+        <Document ID="2224D433-7CA8-43B4-9E8B-5FA21EB234CD">
+            <Title>Statistical Analysis</Title>
+        </Document>
         <Document ID="5DE5963D-AA84-4A40-B5F6-7222D0958D28">
             <Title>Facebook Scrape</Title>
             <Text>Facebook Scraping

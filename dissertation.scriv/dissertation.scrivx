@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ScrivenerProject Template="No" Version="2.0" Identifier="351921F4-A161-4183-9AB6-4D4771A7242D" Creator="SCRWIN-3.1.1.0" Device="LAPTOP-L9J78L8B" Modified="2022-03-05 16:40:46 +0200" ModID="0EFF0FE3-3A15-4624-9395-0B87AE6FBBD1">
+<ScrivenerProject Template="No" Version="2.0" Identifier="351921F4-A161-4183-9AB6-4D4771A7242D" Creator="SCRWIN-3.1.1.0" Device="LAPTOP-L9J78L8B" Modified="2022-03-12 18:02:03 +0200" ModID="C7FAF570-9C4C-4968-AB11-C6159332A881">
     <Binder>
         <BinderItem UUID="441E5FAB-4419-4A3D-A165-F5629866B83B" Type="DraftFolder" Created="2022-02-13 10:49:29 +0200" Modified="2022-02-13 13:54:52 +0200">
             <Title>DISSERTATION</Title>
@@ -7,6 +7,26 @@
                 <IncludeInCompile>Yes</IncludeInCompile>
             </MetaData>
             <Children>
+                <BinderItem UUID="2224D433-7CA8-43B4-9E8B-5FA21EB234CD" Type="Folder" Created="2022-03-12 16:17:28 +0200" Modified="2022-03-12 16:17:39 +0200">
+                    <Title>Statistical Analysis</Title>
+                    <MetaData>
+                        <IncludeInCompile>Yes</IncludeInCompile>
+                    </MetaData>
+                    <TextSettings>
+                        <TextSelection>0,0</TextSelection>
+                    </TextSettings>
+                    <Children>
+                        <BinderItem UUID="2169599F-99D8-4549-B6FC-C5C5F8C75DDA" Type="Text" Created="2022-03-12 16:17:44 +0200" Modified="2022-03-12 17:55:20 +0200">
+                            <Title>Notes on Seikh's Work</Title>
+                            <MetaData>
+                                <IncludeInCompile>Yes</IncludeInCompile>
+                            </MetaData>
+                            <TextSettings>
+                                <TextSelection>535,0</TextSelection>
+                            </TextSettings>
+                        </BinderItem>
+                    </Children>
+                </BinderItem>
                 <BinderItem UUID="75CB004A-FFDB-4E73-BE8B-0052EC133B76" Type="Folder" Created="2022-02-13 13:54:56 +0200" Modified="2022-02-13 13:55:01 +0200">
                     <Title>Scrapes</Title>
                     <MetaData>
@@ -40,7 +60,7 @@
                                 <IncludeInCompile>Yes</IncludeInCompile>
                             </MetaData>
                             <TextSettings>
-                                <TextSelection>0,2915</TextSelection>
+                                <TextSelection>761,0</TextSelection>
                             </TextSettings>
                         </BinderItem>
                         <BinderItem UUID="CEA5B0D1-B201-4044-9DC4-3D1BD77C42C7" Type="Text" Created="2022-03-04 20:57:49 +0200" Modified="2022-03-04 20:57:55 +0200">
@@ -49,7 +69,7 @@
                                 <IncludeInCompile>Yes</IncludeInCompile>
                             </MetaData>
                             <TextSettings>
-                                <TextSelection>1797,0</TextSelection>
+                                <TextSelection>1299,0</TextSelection>
                             </TextSettings>
                         </BinderItem>
                     </Children>
@@ -153,11 +173,11 @@
     <ProjectTargets Notify="No">
         <DraftTarget Type="Words" CountIncludedOnly="Yes" CurrentCompileGroupOnly="No" Deadline="2022-02-13 10:49:29 +0200" IgnoreDeadline="Yes">0</DraftTarget>
         <SessionTarget Type="Words" CountDraftOnly="No" AllowNegatives="No" ResetType="Time" ResetTime="01:00" DeterminedFromDeadline="No" CanWriteOnDeadlineDate="Yes" WritingDays="">0</SessionTarget>
-        <PreviousSession Words="497" Characters="2915" Date="2022-03-05 16:40:46 +0200"/>
+        <PreviousSession Words="93" Characters="535" Date="2022-03-12 18:02:03 +0200"/>
     </ProjectTargets>
-    <RecentWritingHistory Date="2022-03-05 00:00:00 +0200">
-        <DraftWordCount>497</DraftWordCount>
-        <DraftCharCount>2915</DraftCharCount>
+    <RecentWritingHistory Date="2022-03-12 00:00:00 +0200">
+        <DraftWordCount>93</DraftWordCount>
+        <DraftCharCount>535</DraftCharCount>
         <OtherWordCount>0</OtherWordCount>
         <OtherCharCount>0</OtherCharCount>
     </RecentWritingHistory>
