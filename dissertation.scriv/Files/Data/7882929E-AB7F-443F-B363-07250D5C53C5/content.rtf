@@ -1,5 +1,5 @@
 {\rtf1\ansi\ansicpg1252\uc1\deff0
-{\fonttbl{\f0\fmodern\fcharset0\fprq2 SitkaText;}{\f1\fnil\fcharset0\fprq2 SitkaText;}{\f2\fmodern\fcharset0\fprq2 Calibri;}}
+{\fonttbl{\f0\fmodern\fcharset0\fprq2 SitkaText;}{\f1\fmodern\fcharset0\fprq2 SitkaText;}{\f2\fmodern\fcharset0\fprq2 Calibri;}}
 {\colortbl;\red0\green0\blue0;\red255\green255\blue255;\red128\green128\blue128;}
 \paperw12240\paperh15840\margl1800\margr1800\margt1440\margb1440\f0\fs24\cf0
 \pard\plain \tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\sb260\sl262\slmult1\ltrch\loch {\f1\fs36\b1\i0 <$Scr_Ps::0><$Scr_H::1>Linkedin Scraping<!$Scr_H::1><!$Scr_Ps::0>}
@@ -202,9 +202,9 @@
 \trowd\trgaph30 \trautofit1\lastrow \trbrdrr\brdrnil \trbrdrb\brdrnil \trbrdrl\brdrnil 
 \clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx4000
 \row}\pard
-\pard\plain \ltrch\loch 
-\par\plain {As a result, phantombuster returned a csv file, containing 6924 rows, i.e. one for each post of all the companies along with the following data:}
-\par\plain 
+\pard\plain \ltrch\loch \f0\fs24\b0\i0
+\par\plain {\f0\fs24\b0\i0 As a result, phantombuster returned a csv file, containing 6924 rows, i.e. one for each post of all the companies along with the following data:}
+\par\plain \f0\fs24\b0\i0
 
 
 \trowd\trgaph30 \trautofit1 \trbrdrt\brdrnil \trbrdrr\brdrnil \trbrdrl\brdrnil 
@@ -362,15 +362,17 @@
 
 \clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx8000
 \row}\pard
-\pard\plain \ltrch\loch {These data acted as a base for the rest of the mining regarding image and text properties.}
-\par\pard\plain \tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\sb260\sl262\slmult1\ltrch\loch {\f0\fs26\b1 <$Scr_Ps::1><$Scr_H::2>Readability}
-\par\plain {Next step was to calculate the readability for each post\loch\af0\hich\af0\dbch\af0\uc1\u8217\'92s content. For this, we used another web service, called }{\field{\*\fldinst HYPERLINK "https://readable.com"}{\fldrslt\f0\fs24 https://readable.com}}{/. Readable offers a wide range of readability indices but we chose to use SMOG (because USDA advices the use of it in the drugs\loch\af0\hich\af0\dbch\af0\uc1\u8217\'92 leaflets) and Flesch Kincaid Grade Level because it\u8217\'92s the most popular and SMOG is not very accurate with small texts.<!$Scr_H::2><!$Scr_Ps::1>}
-\par\pard\plain \ltrch\loch 
-\par\plain {Again, a CSV with the content of each post was fed (wherever text content existed) to the platform and a final CSV with all the indices was returned from which only SMOG and Flesch were used as explained above.}
-\par\pard\plain \tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\sb260\sl262\slmult1\ltrch\loch {\f0\fs26\b1 <$Scr_Ps::1><$Scr_H::2>Vision API<!$Scr_H::2><!$Scr_Ps::1>}
+\pard\plain \ltrch\loch {\f0\fs24\b0\i0 These data acted as a base for the rest of the mining regarding image and text properties.}
+\par\pard\plain \tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\sb260\sl262\slmult1\ltrch\loch {\f1\fs26\b1\i0 <$Scr_Ps::1><$Scr_H::2>Readability}
+\par\plain {\f0\fs24\b0\i0 Next step was to calculate the readability for each post\loch\af0\hich\af0\dbch\af0\uc1\u8217\'92s content. For this, we used another web service, called }{\field{\*\fldinst HYPERLINK "https://readable.com"}{\fldrslt\f0\fs24\b0\i0 https://readable.com}}{\f0\fs24\b0\i0 /. Readable offers a wide range of readability indices but we chose to use SMOG (because USDA advices the use of it in the drugs\loch\af0\hich\af0\dbch\af0\uc1\u8217\'92 leaflets) and Flesch Kincaid Grade Level because it\u8217\'92s the most popular and SMOG is not very accurate with small texts.<!$Scr_H::2><!$Scr_Ps::1>}
+\par\pard\plain \ltrch\loch \f0\fs24\b0\i0
+\par\plain {\f0\fs24\b0\i0 Again, a CSV with the content of each post was fed (wherever text content existed) to the platform and a final CSV with all the indices was returned from which only SMOG and Flesch were used as explained above.}
+\par\pard\plain \tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\sb260\sl262\slmult1\ltrch\loch {\f1\fs26\b1\i0 <$Scr_Ps::1><$Scr_H::2>Vision API<!$Scr_H::2><!$Scr_Ps::1>}
 \par\pard\plain \tx0\tx360\tx720\tx1080\tx1440\tx1800\tx2160\tx2880\tx3600\tx4320\fi360\ltrch\loch {\f0\fs24\b0\i0 We then had to process the images for colors, faces and emotions. Google has a great service for all of these, named \loch\af0\hich\af0\dbch\af0\uc1\u8220\'93Vision API\u8221\'94. We used python to extract these information.}
 \par\plain {\f0\fs24\b0\i0 More specifically, one python script was devised in order to extract the faces number (if any) in all of the pictures. }
 \par\plain {\f0\fs24\b0\i0 Another one was written so we could fetch the feelings in the faces of each picture. Vision API returned a possibility for each of four feelings inside each photo for every face there. The 4 feelings are: Joy, Angry, Sorrow and Surprice. These data were not well suited for SPSS so we dicided to manipulate in an excel file and the final SPSS data had a boolean field for the presence of each of the 4 feelings. This means that if even 1 face in a picture had a possibility or certainty of showing Joy, then Joy field was True. Same for the rest of the feelings.}
 \par\plain {\f0\fs24\b0\i0 After the feelings and the number of faces, we started mining color information. Vision Api has another endpoint that returns the 5 dominant colors of each picture. Again, as with faces numbers and feelings, a TXT file with the imageURLs was parsed by a python script and then was fed into the Vision Api for processing. Again, because of SPSS limitations, we kept only the most dominant color in hex format. Of course the result was thousands of unique HEX colorcodes that could not offer anything in any statistical analysis. This is where we realised that we had to classify the colors. The creation of }
-\par\pard\plain \ltrch\loch 
-\par\plain }
+\par\plain \f0\fs24\b0\i0
+\par\pard\plain \ltrch\loch {\field{\*\fldinst HYPERLINK "https://drafts.csswg.org/css-color-3"}{\fldrslt\f0\fs24 https://drafts.csswg.org/css-color-3}}{/}
+\par\plain \f0\fs24\b0\i0
+\par\plain \f0\fs24\b0\i0}

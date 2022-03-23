@@ -108,6 +108,8 @@ More specifically, one python script was devised in order to extract the faces n
 Another one was written so we could fetch the feelings in the faces of each picture. Vision API returned a possibility for each of four feelings inside each photo for every face there. The 4 feelings are: Joy, Angry, Sorrow and Surprice. These data were not well suited for SPSS so we dicided to manipulate in an excel file and the final SPSS data had a boolean field for the presence of each of the 4 feelings. This means that if even 1 face in a picture had a possibility or certainty of showing Joy, then Joy field was True. Same for the rest of the feelings.
 After the feelings and the number of faces, we started mining color information. Vision Api has another endpoint that returns the 5 dominant colors of each picture. Again, as with faces numbers and feelings, a TXT file with the imageURLs was parsed by a python script and then was fed into the Vision Api for processing. Again, because of SPSS limitations, we kept only the most dominant color in hex format. Of course the result was thousands of unique HEX colorcodes that could not offer anything in any statistical analysis. This is where we realised that we had to classify the colors. The creation of 
 
+https://drafts.csswg.org/css-color-3/
+
 </Text>
         </Document>
         <Document ID="7B619649-215D-4F7C-8771-18C7431F9644">
