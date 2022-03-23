@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ScrivenerProject Template="No" Version="2.0" Identifier="351921F4-A161-4183-9AB6-4D4771A7242D" Creator="SCRWIN-3.1.1.0" Device="LAPTOP-L9J78L8B" Modified="2022-03-12 18:02:03 +0200" ModID="C7FAF570-9C4C-4968-AB11-C6159332A881">
+<ScrivenerProject Template="No" Version="2.0" Identifier="351921F4-A161-4183-9AB6-4D4771A7242D" Creator="SCRWIN-3.1.1.0" Device="LAPTOP-L9J78L8B" Modified="2022-03-23 21:03:35 +0200" ModID="54A03313-772F-4100-BE1D-5D3CA21381D6">
     <Binder>
         <BinderItem UUID="441E5FAB-4419-4A3D-A165-F5629866B83B" Type="DraftFolder" Created="2022-02-13 10:49:29 +0200" Modified="2022-02-13 13:54:52 +0200">
             <Title>DISSERTATION</Title>
@@ -7,6 +7,35 @@
                 <IncludeInCompile>Yes</IncludeInCompile>
             </MetaData>
             <Children>
+                <BinderItem UUID="E471F7BB-3E22-4270-9E98-B545E8D2733F" Type="Folder" Created="2022-03-23 18:45:18 +0200" Modified="2022-03-23 18:45:25 +0200">
+                    <Title>writing</Title>
+                    <MetaData>
+                        <IncludeInCompile>Yes</IncludeInCompile>
+                    </MetaData>
+                    <TextSettings>
+                        <TextSelection>0,0</TextSelection>
+                    </TextSettings>
+                    <Children>
+                        <BinderItem UUID="5DE5963D-AA84-4A40-B5F6-7222D0958D28" Type="Text" Created="2022-02-27 12:17:03 +0200" Modified="2022-03-23 18:50:14 +0200">
+                            <Title>Facebook Scrape</Title>
+                            <MetaData>
+                                <IncludeInCompile>Yes</IncludeInCompile>
+                            </MetaData>
+                            <TextSettings>
+                                <TextSelection>18,0</TextSelection>
+                            </TextSettings>
+                        </BinderItem>
+                        <BinderItem UUID="7882929E-AB7F-443F-B363-07250D5C53C5" Type="Text" Created="2022-03-23 18:49:47 +0200" Modified="2022-03-23 21:03:34 +0200">
+                            <Title>Linkedin Scraping</Title>
+                            <MetaData>
+                                <IncludeInCompile>Yes</IncludeInCompile>
+                            </MetaData>
+                            <TextSettings>
+                                <TextSelection>848,0</TextSelection>
+                            </TextSettings>
+                        </BinderItem>
+                    </Children>
+                </BinderItem>
                 <BinderItem UUID="2224D433-7CA8-43B4-9E8B-5FA21EB234CD" Type="Folder" Created="2022-03-12 16:17:28 +0200" Modified="2022-03-12 16:17:39 +0200">
                     <Title>Statistical Analysis</Title>
                     <MetaData>
@@ -36,8 +65,8 @@
                         <TextSelection>0,0</TextSelection>
                     </TextSettings>
                     <Children>
-                        <BinderItem UUID="7B619649-215D-4F7C-8771-18C7431F9644" Type="Text" Created="2022-02-13 10:49:29 +0200" Modified="2022-03-04 20:39:39 +0200">
-                            <Title>Linkedin Scrape</Title>
+                        <BinderItem UUID="7B619649-215D-4F7C-8771-18C7431F9644" Type="Text" Created="2022-02-13 10:49:29 +0200" Modified="2022-03-23 18:45:39 +0200">
+                            <Title>Linkedin Scrape notes</Title>
                             <MetaData>
                                 <IncludeInCompile>Yes</IncludeInCompile>
                             </MetaData>
@@ -45,22 +74,13 @@
                                 <TextSelection>2009,0</TextSelection>
                             </TextSettings>
                         </BinderItem>
-                        <BinderItem UUID="9077913A-143A-489C-A217-D0A70003E026" Type="Text" Created="2022-02-20 10:38:46 +0200" Modified="2022-02-20 11:09:50 +0200">
-                            <Title>Instagram Scrape</Title>
+                        <BinderItem UUID="9077913A-143A-489C-A217-D0A70003E026" Type="Text" Created="2022-02-20 10:38:46 +0200" Modified="2022-03-23 18:45:43 +0200">
+                            <Title>Instagram Scrape notes</Title>
                             <MetaData>
                                 <IncludeInCompile>Yes</IncludeInCompile>
                             </MetaData>
                             <TextSettings>
                                 <TextSelection>3,0</TextSelection>
-                            </TextSettings>
-                        </BinderItem>
-                        <BinderItem UUID="5DE5963D-AA84-4A40-B5F6-7222D0958D28" Type="Text" Created="2022-02-27 12:17:03 +0200" Modified="2022-03-05 16:31:39 +0200">
-                            <Title>Facebook Scrape</Title>
-                            <MetaData>
-                                <IncludeInCompile>Yes</IncludeInCompile>
-                            </MetaData>
-                            <TextSettings>
-                                <TextSelection>761,0</TextSelection>
                             </TextSettings>
                         </BinderItem>
                         <BinderItem UUID="CEA5B0D1-B201-4044-9DC4-3D1BD77C42C7" Type="Text" Created="2022-03-04 20:57:49 +0200" Modified="2022-03-04 20:57:55 +0200">
@@ -69,7 +89,7 @@
                                 <IncludeInCompile>Yes</IncludeInCompile>
                             </MetaData>
                             <TextSettings>
-                                <TextSelection>1299,0</TextSelection>
+                                <TextSelection Caret="1797">0,1797</TextSelection>
                             </TextSettings>
                         </BinderItem>
                     </Children>
@@ -173,11 +193,11 @@
     <ProjectTargets Notify="No">
         <DraftTarget Type="Words" CountIncludedOnly="Yes" CurrentCompileGroupOnly="No" Deadline="2022-02-13 10:49:29 +0200" IgnoreDeadline="Yes">0</DraftTarget>
         <SessionTarget Type="Words" CountDraftOnly="No" AllowNegatives="No" ResetType="Time" ResetTime="01:00" DeterminedFromDeadline="No" CanWriteOnDeadlineDate="Yes" WritingDays="">0</SessionTarget>
-        <PreviousSession Words="93" Characters="535" Date="2022-03-12 18:02:03 +0200"/>
+        <PreviousSession Words="849" Characters="5048" Date="2022-03-23 21:03:35 +0200"/>
     </ProjectTargets>
-    <RecentWritingHistory Date="2022-03-12 00:00:00 +0200">
-        <DraftWordCount>93</DraftWordCount>
-        <DraftCharCount>535</DraftCharCount>
+    <RecentWritingHistory Date="2022-03-23 00:00:00 +0200">
+        <DraftWordCount>849</DraftWordCount>
+        <DraftCharCount>5048</DraftCharCount>
         <OtherWordCount>0</OtherWordCount>
         <OtherCharCount>0</OtherCharCount>
     </RecentWritingHistory>

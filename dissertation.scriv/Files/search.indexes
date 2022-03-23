@@ -35,8 +35,83 @@ The last resort was to device some vanilla Javascript directives in order to scr
         <Document ID="75CB004A-FFDB-4E73-BE8B-0052EC133B76">
             <Title>Scrapes</Title>
         </Document>
+        <Document ID="7882929E-AB7F-443F-B363-07250D5C53C5">
+            <Title>Linkedin Scraping</Title>
+            <Text>Linkedin Scraping
+Linkedin was the number one choice for statistical analysis. Even though we are using data extracted through images with the help of the Google Vision API and Instagram is the king of images, we prefered Linkedin because it’s a much more demanding social network for the companies. Furthermore, there is virtually no pharma company out there without a Linkedin Account.
+After all instagram accounts were not that frequent and twitter has the text’s word count limitation and pictures were not that aboundant. Therefore we targeted Linkedin for combining the best of both and shows the most profesisonal character, while we found easy ways to mine the data. After all, we knew that linkedin accounts served as “default” social media accounts and any content posted there had a big chance of being shared in other platforms as well.
+Tools and procedure
+The initial data mining procedure was pretty simple and straightforward. No coding was needed at all as Phantombuster.com was chosen to do the work for us. The URLs of the linkedin accounts of 24 companies were fed as a CSV file into an already made phantombuster extractor (named “LinkedIn Activities Extractor”). The companies used were:
+Companies mined
+
+abbott  
+amgen 
+astellaspharmainc 
+astrazeneca 
+basf 
+baxter healthcare 
+bayer 
+beiersdorf 
+boehringer ingelheim 
+bristol myers squibb 
+chiesi group 
+eli lilly
+gilead sciences 
+glaxosmithkline 
+janssen pharmaceutical companies of johnson and johnson 
+leo pharma 
+merck 
+merck group 
+novartis 
+novo nordisk 
+pfizer 
+roche 
+sanofi 
+ucb pharma 
+
+
+As a result, phantombuster returned a csv file, containing 6924 rows, i.e. one for each post of all the companies along with the following data:
+
+profileUrl
+This is the last part of the full linkedin account url, practically it is the name of the company
+error
+this is a field returning any errors, but actually returned none
+timestamp
+This is the time and date that mining happened. Example value: 2022-02-05T15:39:14.366Z
+postUrl
+This is the post's URL around which most of the processing happened until we came up with the final SPSS data
+action
+This field returned only the &quot;Post&quot; value and thus, was never used
+imgUrl
+The URL of the image of the post. Article, text, video and poll types, returned blank cells
+type
+The type of the post. Possible values: Article, image, poll, text, live video, video (external source), video (internal source)
+postContent
+The filed containing the string of the text of the post.
+likeCount
+The count of likes each post received
+commentCount
+The count of comments each post received
+postDate
+The date of the post. Unfortunately linkedin returned d/m/y before present day so no seasonality could be taken into account
+viewCount
+This field returns the number of views a post received. Since no account was belonging to us, there were no rights and we got only blanks
+
+These data acted as a base for the rest of the mining regarding image and text properties.
+Readability
+Next step was to calculate the readability for each post’s content. For this, we used another web service, called https://readable.com/. Readable offers a wide range of readability indices but we chose to use SMOG (because USDA advices the use of it in the drugs’ leaflets) and Flesch Kincaid Grade Level because it’s the most popular and SMOG is not very accurate with small texts.
+
+Again, a CSV with the content of each post was fed (wherever text content existed) to the platform and a final CSV with all the indices was returned from which only SMOG and Flesch were used as explained above.
+Vision API
+We then had to process the images for colors, faces and emotions. Google has a great service for all of these, named “Vision API”. We used python to extract these information.
+More specifically, one python script was devised in order to extract the faces number (if any) in all of the pictures. 
+Another one was written so we could fetch the feelings in the faces of each picture. Vision API returned a possibility for each of four feelings inside each photo for every face there. The 4 feelings are: Joy, Angry, Sorrow and Surprice. These data were not well suited for SPSS so we dicided to manipulate in an excel file and the final SPSS data had a boolean field for the presence of each of the 4 feelings. This means that if even 1 face in a picture had a possibility or certainty of showing Joy, then Joy field was True. Same for the rest of the feelings.
+After the feelings and the number of faces, we started mining color information. Vision Api has another endpoint that returns the 5 dominant colors of each picture. Again, as with faces numbers and feelings, a TXT file with the imageURLs was parsed by a python script and then was fed into the Vision Api for processing. Again, because of SPSS limitations, we kept only the most dominant color in hex format. Of course the result was thousands of unique HEX colorcodes that could not offer anything in any statistical analysis. This is where we realised that we had to classify the colors. The creation of 
+
+</Text>
+        </Document>
         <Document ID="7B619649-215D-4F7C-8771-18C7431F9644">
-            <Title>Linkedin Scrape</Title>
+            <Title>Linkedin Scrape notes</Title>
             <Text>Linkedin Scrape Specifications and Constrains
 Things Scraped
 Some of the following variables are either not needed or without consistency, hence, they have been stricken through to signify that they will not be used for statistical analysis.
@@ -101,7 +176,7 @@ Correlation between engagement and possible mask on image</Text>
 </Text>
         </Document>
         <Document ID="9077913A-143A-489C-A217-D0A70003E026">
-            <Title>Instagram Scrape</Title>
+            <Title>Instagram Scrape notes</Title>
             <Text>Instagram Scrape Specifications and Constrains
 Things Scraped
 PostUrl
@@ -178,6 +253,9 @@ We'd like all the above as parts of various statistical analyses.
 Please study the data and suggest us hypotheses and research questions so we can come up with the final questions so you can begin. 
 
 thank you.</Text>
+        </Document>
+        <Document ID="E471F7BB-3E22-4270-9E98-B545E8D2733F">
+            <Title>writing</Title>
         </Document>
         <Document ID="F14F803E-BA9D-4AC9-8B36-C756AF2D69B2">
             <Title>Research Hypotheses</Title>
