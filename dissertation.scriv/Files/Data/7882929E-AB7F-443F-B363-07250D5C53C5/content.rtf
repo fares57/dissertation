@@ -1,6 +1,10 @@
 {\rtf1\ansi\ansicpg1252\uc1\deff0
 {\fonttbl{\f0\fmodern\fcharset0\fprq2 SitkaText;}{\f1\fmodern\fcharset0\fprq2 SitkaText;}{\f2\fmodern\fcharset0\fprq2 Calibri;}}
 {\colortbl;\red0\green0\blue0;\red255\green255\blue255;\red128\green128\blue128;}
+{\*\listtable
+{\list\listtemplateid1\listhybrid
+{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{decimal\}.}{\leveltext\leveltemplateid1\'02\'00.;}{\levelnumbers\'01;}\f0\fs24\b0\i0\fi-667\li960\lin960}{\listname ;}\listid1}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}}
 \paperw12240\paperh15840\margl1800\margr1800\margt1440\margb1440\f0\fs24\cf0
 \pard\plain \tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\sb260\sl262\slmult1\ltrch\loch {\f1\fs36\b1\i0 <$Scr_Ps::0><$Scr_H::1>Linkedin Scraping<!$Scr_H::1><!$Scr_Ps::0>}
 \par\pard\plain \tx0\tx360\tx720\tx1080\tx1440\tx1800\tx2160\tx2880\tx3600\tx4320\fi360\ltrch\loch {\f0\fs24\b0\i0 Linkedin was the number one choice for statistical analysis. Even though we are using data extracted through images with the help of the Google Vision API and Instagram is the king of images, we prefered Linkedin because it\loch\af0\hich\af0\dbch\af0\uc1\u8217\'92s a much more demanding social network for the companies. Furthermore, there is virtually no pharma company out there without a Linkedin Account.}
@@ -363,16 +367,863 @@
 \clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx8000
 \row}\pard
 \pard\plain \ltrch\loch {\f0\fs24\b0\i0 These data acted as a base for the rest of the mining regarding image and text properties.}
-\par\pard\plain \tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\sb260\sl262\slmult1\ltrch\loch {\f1\fs26\b1\i0 <$Scr_Ps::1><$Scr_H::2>Readability}
-\par\plain {\f0\fs24\b0\i0 Next step was to calculate the readability for each post\loch\af0\hich\af0\dbch\af0\uc1\u8217\'92s content. For this, we used another web service, called }{\field{\*\fldinst HYPERLINK "https://readable.com"}{\fldrslt\f0\fs24\b0\i0 https://readable.com}}{\f0\fs24\b0\i0 /. Readable offers a wide range of readability indices but we chose to use SMOG (because USDA advices the use of it in the drugs\loch\af0\hich\af0\dbch\af0\uc1\u8217\'92 leaflets) and Flesch Kincaid Grade Level because it\u8217\'92s the most popular and SMOG is not very accurate with small texts.<!$Scr_H::2><!$Scr_Ps::1>}
-\par\pard\plain \ltrch\loch \f0\fs24\b0\i0
-\par\plain {\f0\fs24\b0\i0 Again, a CSV with the content of each post was fed (wherever text content existed) to the platform and a final CSV with all the indices was returned from which only SMOG and Flesch were used as explained above.}
+\par\pard\plain \tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\sb260\sl262\slmult1\ltrch\loch {\f1\fs26\b1\i0 <$Scr_Ps::1><$Scr_H::2>Readability\line     }{\f0\fs24\b0\i0 Next step was to calculate the readability for each post\loch\af0\hich\af0\dbch\af0\uc1\u8217\'92s content. We started by testing free or freemium apis on the RapidAPI.com platform in order to find something reliable. Due to the cost structure of these APIs, we decide to call it a day and choose a SAAS solution with an easy to use interface.\line      For this, we used another web service, called }{\field{\*\fldinst HYPERLINK "https://readable.com"}{\fldrslt\f0\fs24\b0\i0 https://readable.com}}{\f0\fs24\b0\i0 /. Readable offers a wide range of readability indices but we chose to use SMOG (because USDA advices the use of it in the drugs\loch\af0\hich\af0\dbch\af0\uc1\u8217\'92 leaflets) and Flesch Kincaid Grade Level because it\u8217\'92s the most popular and SMOG is not very accurate with small texts.<!$Scr_H::2><!$Scr_Ps::1>}
+\par\pard\plain \ltrch\loch {\f0\fs24\b0\i0      Again, a CSV with the content of each post was fed (wherever text content existed) to the platform and a final CSV with all the indices was returned from which only SMOG and Flesch were used as explained above.}
+\par\plain {\f0\fs24\b0\i0      We ended up with 2 different numerical variables of scale type. This would be hard if we wanted to have some descriptive statistics so we decide to further classify both indices according to an \loch\af0\hich\af0\dbch\af0\uc1\u8220\'93easy-medium-hard\u8221\'94 rating. More specifically, for SMOG this formula was used in our excel file: =IF(G3<=9,"EASY",IF(G3<=14,"MEDIUM","HARD")), while for FKGL, =IF(I3<=6,"EASY",IF(I3<=12,"MEDIUM","HARD")) giving us the following table:}
+\par\plain \f0\fs24\b0\i0
+
+
+\trowd\trgaph0 \trautofit1 \trbrdrt\brdrnil \trbrdrr\brdrnil \trbrdrl\brdrnil 
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx2160
+
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx4320
+
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx6480
+
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx8640
+
+\pard\plain \intbl\itap1\f0\fs24\b0\i0\cell 
+\pard\plain \intbl\itap1{\f0\fs24\b0\i0 EASY}\cell 
+\pard\plain \intbl\itap1{\f0\fs24\b0\i0 MEDIUM}\cell 
+\pard\plain \intbl\itap1{\f0\fs24\b0\i0 HARD}\cell{
+\trowd\trgaph0 \trautofit1 \trbrdrt\brdrnil \trbrdrr\brdrnil \trbrdrl\brdrnil 
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx2160
+
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx4320
+
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx6480
+
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx8640
+\row}\pard
+
+\trowd\trgaph0 \trautofit1 \trbrdrr\brdrnil \trbrdrl\brdrnil 
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx2160
+
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx4320
+
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx6480
+
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx8640
+
+\pard\plain \intbl\itap1{\f0\fs24\b0\i0 SMOG}\cell 
+\pard\plain \intbl\itap1{\f0\fs24\b0\i0 -9}\cell 
+\pard\plain \intbl\itap1{\f0\fs24\b0\i0 10-14}\cell 
+\pard\plain \intbl\itap1{\f0\fs24\b0\i0 15+}\cell{
+\trowd\trgaph0 \trautofit1 \trbrdrr\brdrnil \trbrdrl\brdrnil 
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx2160
+
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx4320
+
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx6480
+
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx8640
+\row}\pard
+
+\trowd\trgaph0 \trautofit1\lastrow \trbrdrr\brdrnil \trbrdrb\brdrnil \trbrdrl\brdrnil 
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx2160
+
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx4320
+
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx6480
+
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx8640
+
+\pard\plain \intbl\itap1{\f0\fs24\b0\i0 FKGL}\cell 
+\pard\plain \intbl\itap1{\f0\fs24\b0\i0 -6}\cell 
+\pard\plain \intbl\itap1{\f0\fs24\b0\i0 7-12}\cell 
+\pard\plain \intbl\itap1{\f0\fs24\b0\i0 13+}\cell{
+\trowd\trgaph0 \trautofit1\lastrow \trbrdrr\brdrnil \trbrdrb\brdrnil \trbrdrl\brdrnil 
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx2160
+
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx4320
+
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx6480
+
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx8640
+\row}\pard
+\pard\plain \tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\sb260\sl262\slmult1\ltrch\loch {\f1\fs26\b1\i0 <$Scr_Ps::1><$Scr_H::2>Images Processing<!$Scr_H::2><!$Scr_Ps::1>}
+\par\pard\plain \tx0\tx360\tx720\tx1080\tx1440\tx1800\tx2160\tx2880\tx3600\tx4320\fi360\ltrch\loch {\f0\fs24\b0\i0 We wanted to use a stable and reliable tool for images in order to extract elements of them plus the color ID of the pixels. There was no previous experience about it so we started searching in Google. We ended up in RapidAPI.com again where we found quite a few APIs that were only analyzing the similarity between two or more images or giving data about the image like the coding of the image etc. Some of these APIs were: Face Similarity, Similarity, CLIP Text-Image Image-Text Similarity. They were all instable and unreliable with results that was easy to prove wrong simply with a glimpse of a naked eye.}
 \par\pard\plain \tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\sb260\sl262\slmult1\ltrch\loch {\f1\fs26\b1\i0 <$Scr_Ps::1><$Scr_H::2>Vision API<!$Scr_H::2><!$Scr_Ps::1>}
-\par\pard\plain \tx0\tx360\tx720\tx1080\tx1440\tx1800\tx2160\tx2880\tx3600\tx4320\fi360\ltrch\loch {\f0\fs24\b0\i0 We then had to process the images for colors, faces and emotions. Google has a great service for all of these, named \loch\af0\hich\af0\dbch\af0\uc1\u8220\'93Vision API\u8221\'94. We used python to extract these information.}
+\par\pard\plain \tx0\tx360\tx720\tx1080\tx1440\tx1800\tx2160\tx2880\tx3600\tx4320\fi360\ltrch\loch {\f0\fs24\b0\i0 So we ended up with a Google solution with which we could process the images for colors, faces and emotions. The service for all of these is called \loch\af0\hich\af0\dbch\af0\uc1\u8220\'93Vision API\u8221\'94. We used python to extract these information.}
 \par\plain {\f0\fs24\b0\i0 More specifically, one python script was devised in order to extract the faces number (if any) in all of the pictures. }
 \par\plain {\f0\fs24\b0\i0 Another one was written so we could fetch the feelings in the faces of each picture. Vision API returned a possibility for each of four feelings inside each photo for every face there. The 4 feelings are: Joy, Angry, Sorrow and Surprice. These data were not well suited for SPSS so we dicided to manipulate in an excel file and the final SPSS data had a boolean field for the presence of each of the 4 feelings. This means that if even 1 face in a picture had a possibility or certainty of showing Joy, then Joy field was True. Same for the rest of the feelings.}
-\par\plain {\f0\fs24\b0\i0 After the feelings and the number of faces, we started mining color information. Vision Api has another endpoint that returns the 5 dominant colors of each picture. Again, as with faces numbers and feelings, a TXT file with the imageURLs was parsed by a python script and then was fed into the Vision Api for processing. Again, because of SPSS limitations, we kept only the most dominant color in hex format. Of course the result was thousands of unique HEX colorcodes that could not offer anything in any statistical analysis. This is where we realised that we had to classify the colors. The creation of }
+\par\plain {\f0\fs24\b0\i0 After the feelings and the number of faces, we started mining color information. Vision Api has another endpoint that returns the 5 dominant colors of each picture. Again, as with faces numbers and feelings, a TXT file with the image URLs was parsed by a python script and then was fed into the Vision Api for processing. Again, because of SPSS limitations, we kept only the most dominant color in hex format. Of course the result was thousands of unique HEX colorcodes that could not offer anything in any statistical analysis. This is where we realised that we had to classify the colors.}
+\par\pard\plain \tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\sb260\sl262\slmult1\ltrch\loch {\f1\fs26\b1\i0 <$Scr_Ps::1><$Scr_H::2>Restrictions with images<!$Scr_H::2><!$Scr_Ps::1>}
+\par\pard\plain \tx0\tx360\tx720\tx1080\tx1440\tx1800\tx2160\tx2880\tx3600\tx4320\fi360\ltrch\loch {\f0\fs24\b0\i0 We faced a major restriction when it came to images. We realised that we could only access the posts that had an image that belonged to the linkedin domain, i.e. posts with images, or the first frame of a gif. If it was an image of an external URL, phantombuster returned a \loch\af0\hich\af0\dbch\af0\uc1\u8220\'93not accessible\u8221\'94 blank page when opening that image URL. Out of 6523 images, a total of 3525 were had to be classified as \u8220\'93Not Accessible\u8221\'94 This restriction influenced the following metrics: }
+\par\pard\plain \ltrch\loch \f0\fs24\b0\i0
+
+
+\trowd\trgaph30 \trautofit1 \trbrdrt\brdrnil \trbrdrr\brdrnil \trbrdrl\brdrnil 
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx4000
+
+\pard\plain \intbl\itap1\ql{\f2\fs22\b0\i0\cf1 faces no}\cell{
+\trowd\trgaph30 \trautofit1 \trbrdrt\brdrnil \trbrdrr\brdrnil \trbrdrl\brdrnil 
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx4000
+\row}\pard
+
+\trowd\trgaph30 \trautofit1 \trbrdrr\brdrnil \trbrdrl\brdrnil 
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx4000
+
+\pard\plain \intbl\itap1\ql{\f2\fs22\b0\i0\cf1 face exist}\cell{
+\trowd\trgaph30 \trautofit1 \trbrdrr\brdrnil \trbrdrl\brdrnil 
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx4000
+\row}\pard
+
+\trowd\trgaph30 \trautofit1 \trbrdrr\brdrnil \trbrdrl\brdrnil 
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx4000
+
+\pard\plain \intbl\itap1\ql{\f2\fs22\b0\i0\cf1 SORROW}\cell{
+\trowd\trgaph30 \trautofit1 \trbrdrr\brdrnil \trbrdrl\brdrnil 
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx4000
+\row}\pard
+
+\trowd\trgaph30 \trautofit1 \trbrdrr\brdrnil \trbrdrl\brdrnil 
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx4000
+
+\pard\plain \intbl\itap1\ql{\f2\fs22\b0\i0\cf1 SURPRICE}\cell{
+\trowd\trgaph30 \trautofit1 \trbrdrr\brdrnil \trbrdrl\brdrnil 
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx4000
+\row}\pard
+
+\trowd\trgaph30 \trautofit1 \trbrdrr\brdrnil \trbrdrl\brdrnil 
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx4000
+
+\pard\plain \intbl\itap1\ql{\f2\fs22\b0\i0\cf1 JOY}\cell{
+\trowd\trgaph30 \trautofit1 \trbrdrr\brdrnil \trbrdrl\brdrnil 
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx4000
+\row}\pard
+
+\trowd\trgaph30 \trautofit1 \trbrdrr\brdrnil \trbrdrl\brdrnil 
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx4000
+
+\pard\plain \intbl\itap1\ql{\f2\fs22\b0\i0\cf1 ANGER}\cell{
+\trowd\trgaph30 \trautofit1 \trbrdrr\brdrnil \trbrdrl\brdrnil 
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx4000
+\row}\pard
+
+\trowd\trgaph30 \trautofit1 \trbrdrr\brdrnil \trbrdrl\brdrnil 
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx4000
+
+\pard\plain \intbl\itap1\ql{\f2\fs22\b0\i0\cf1 Text Existance in Photo}\cell{
+\trowd\trgaph30 \trautofit1 \trbrdrr\brdrnil \trbrdrl\brdrnil 
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx4000
+\row}\pard
+
+\trowd\trgaph30 \trautofit1 \trbrdrr\brdrnil \trbrdrl\brdrnil 
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx4000
+
+\pard\plain \intbl\itap1\ql{\f2\fs22\b0\i0\cf1 Image Text Word Count}\cell{
+\trowd\trgaph30 \trautofit1 \trbrdrr\brdrnil \trbrdrl\brdrnil 
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx4000
+\row}\pard
+
+\trowd\trgaph30 \trautofit1 \trbrdrr\brdrnil \trbrdrl\brdrnil 
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx4000
+
+\pard\plain \intbl\itap1\ql{\f2\fs22\b0\i0\cf1 Brand Name in Photo Text}\cell{
+\trowd\trgaph30 \trautofit1 \trbrdrr\brdrnil \trbrdrl\brdrnil 
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx4000
+\row}\pard
+
+\trowd\trgaph30 \trautofit1 \trbrdrr\brdrnil \trbrdrl\brdrnil 
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx4000
+
+\pard\plain \intbl\itap1\ql{\f2\fs22\b0\i0\cf1 Dominant Color Names in Image}\cell{
+\trowd\trgaph30 \trautofit1 \trbrdrr\brdrnil \trbrdrl\brdrnil 
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx4000
+\row}\pard
+
+\trowd\trgaph30 \trautofit1\lastrow \trbrdrr\brdrnil \trbrdrb\brdrnil \trbrdrl\brdrnil 
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx4000
+
+\pard\plain \intbl\itap1\ql{\f2\fs22\b0\i0\cf1 Html4_color}\cell{
+\trowd\trgaph30 \trautofit1\lastrow \trbrdrr\brdrnil \trbrdrb\brdrnil \trbrdrl\brdrnil 
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx4000
+\row}\pard
+\pard\plain \ltrch\loch {Of course no final result got harmed cause there was case selection in any statistical analysis that involved any of these variables.}
+\par\pard\plain \tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\sb260\sl262\slmult1\ltrch\loch {\f1\fs26\b1\i0 <$Scr_Ps::1><$Scr_H::2>Color Classification<!$Scr_H::2><!$Scr_Ps::1>}
+\par\pard\plain \tx0\tx360\tx720\tx1080\tx1440\tx1800\tx2160\tx2880\tx3600\tx4320\fi360\ltrch\loch {\f0\fs24\b0\i0 The creation of an AI machine learning algorithm from scratch was way beyond the scope of this project so we used a pre-made Python module that did the job in a great way. This module had a funciton to classify according to both css3 or HTML4 classification of colors. The css3 classification (}{\field{\*\fldinst HYPERLINK "https://drafts.csswg.org/css-color-3"}{\fldrslt\f0\fs24\b0\i0 https://drafts.csswg.org/css-color-3}}{\f0\fs24\b0\i0 /) was used to create visual treemaps for each company and collectively. This way, we can take a look at the most frequent colors that were used in the images. The downsize of this, was that css3 has more than 100 colors and that way we wouldnt be able to make a statistical analysis inside the SPSS. This is why we used the HTML4 coding that has less than 20 and this one was used for our statictial analysis procedure.}
+\par\plain {\f0\fs24\b0\i0 Eventually, we ended up with only 16 unique colors for html4 and 124 for css3.}
+\par\pard\plain \tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\sb260\sl262\slmult1\ltrch\loch {\f1\fs26\b1\i0 <$Scr_Ps::1><$Scr_H::2>Final SPSS-ready xlsx file<!$Scr_H::2><!$Scr_Ps::1>}
+\par\pard\plain \tx0\tx360\tx720\tx1080\tx1440\tx1800\tx2160\tx2880\tx3600\tx4320\fi360\ltrch\loch {\f0\fs24\b0\i0 To summarize the full procedure:}
+\par\pard\plain \tx235\tx720\li720\fi-500\ltrch\loch \ls1\ilvl0{\listtext	\f0\fs24\b0\i0 1.	}{\f0\fs24\b0\i0 Mining the linkedin posts with phantombuster and exporting the reults in xlsx}
+\par\plain \ilvl0{\listtext	\f0\fs24\b0\i0 2.	}{\f0\fs24\b0\i0 Feeding the mined posts\loch\af0\hich\af0\dbch\af0\uc1\u8217\'92 text contents in the exact order into the readable api.}
+\par\plain \ilvl0{\listtext	\f0\fs24\b0\i0 3.	}{\f0\fs24\b0\i0 Extracting the readability results and pasting them in the exact order as new data in the original xlsx file}
+\par\plain \ilvl0{\listtext	\f0\fs24\b0\i0 4.	}{\f0\fs24\b0\i0 Feeding the mined posts\loch\af0\hich\af0\dbch\af0\uc1\u8217\'92 images URLs in the exact order into a txt file in order for the Python scripts to parse them and process them with the Google Vision API}
+\par\plain \ilvl0{\listtext	\f0\fs24\b0\i0 5.	}{\f0\fs24\b0\i0 Pasting the results of each of the three API scripts into the original file as extra data}
+\par\plain \ilvl0{\listtext	\f0\fs24\b0\i0 6.	}{\f0\fs24\b0\i0 Copying the dominant color data (bulk number of HEX codes) from the original file into a txt file in order to be parsed by the 2 python scripts that were classifying the colors. The results were pasted back into the original excel in the exact same order.}
+\par\plain \ilvl0{\listtext	\f0\fs24\b0\i0 7.	}{\f0\fs24\b0\i0 Classifying the SMOG and FKGL ratings to the \loch\af0\hich\af0\dbch\af0\uc1\u8220\'93Easy-Medium-Hard\u8221\'94 ordinal variable.}
+\par\plain \ilvl0{\listtext	\f0\fs24\b0\i0 8.	}{\f0\fs24\b0\i0 Counting the hashtags inside each text.}
+\par\pard\plain \tx0\tx360\tx720\tx1080\tx1440\tx1800\tx2160\tx2880\tx3600\tx4320\fi360\ltrch\loch \f0\fs24\b0\i0
+\par\plain {\f0\fs24\b0\i0 Now, we had a full xlsx file with all the data needed. The following are the column names of it:}
 \par\plain \f0\fs24\b0\i0
-\par\pard\plain \ltrch\loch {\field{\*\fldinst HYPERLINK "https://drafts.csswg.org/css-color-3"}{\fldrslt\f0\fs24 https://drafts.csswg.org/css-color-3}}{/}
+
+
+\trowd\trgaph30 \trautofit1 \trbrdrt\brdrnil \trbrdrr\brdrnil \trbrdrl\brdrnil 
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx4000
+
+\pard\plain \intbl\itap1\ql{\f2\fs22\b0\i0\cf1 Company Name}\cell{
+\trowd\trgaph30 \trautofit1 \trbrdrt\brdrnil \trbrdrr\brdrnil \trbrdrl\brdrnil 
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx4000
+\row}\pard
+
+\trowd\trgaph30 \trautofit1 \trbrdrr\brdrnil \trbrdrl\brdrnil 
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx4000
+
+\pard\plain \intbl\itap1\ql{\f2\fs22\b0\i0\cf1 postUrl}\cell{
+\trowd\trgaph30 \trautofit1 \trbrdrr\brdrnil \trbrdrl\brdrnil 
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx4000
+\row}\pard
+
+\trowd\trgaph30 \trautofit1 \trbrdrr\brdrnil \trbrdrl\brdrnil 
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx4000
+
+\pard\plain \intbl\itap1\ql{\f2\fs22\b0\i0\cf1 Type}\cell{
+\trowd\trgaph30 \trautofit1 \trbrdrr\brdrnil \trbrdrl\brdrnil 
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx4000
+\row}\pard
+
+\trowd\trgaph30 \trautofit1 \trbrdrr\brdrnil \trbrdrl\brdrnil 
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx4000
+
+\pard\plain \intbl\itap1\ql{\f2\fs22\b0\i0\cf1 word count}\cell{
+\trowd\trgaph30 \trautofit1 \trbrdrr\brdrnil \trbrdrl\brdrnil 
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx4000
+\row}\pard
+
+\trowd\trgaph30 \trautofit1 \trbrdrr\brdrnil \trbrdrl\brdrnil 
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx4000
+
+\pard\plain \intbl\itap1\ql{\f2\fs22\b0\i0\cf1 likeCount}\cell{
+\trowd\trgaph30 \trautofit1 \trbrdrr\brdrnil \trbrdrl\brdrnil 
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx4000
+\row}\pard
+
+\trowd\trgaph30 \trautofit1 \trbrdrr\brdrnil \trbrdrl\brdrnil 
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx4000
+
+\pard\plain \intbl\itap1\ql{\f2\fs22\b0\i0\cf1 commentCount}\cell{
+\trowd\trgaph30 \trautofit1 \trbrdrr\brdrnil \trbrdrl\brdrnil 
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx4000
+\row}\pard
+
+\trowd\trgaph30 \trautofit1 \trbrdrr\brdrnil \trbrdrl\brdrnil 
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx4000
+
+\pard\plain \intbl\itap1\ql{\f2\fs22\b0\i0\cf1 SMOG}\cell{
+\trowd\trgaph30 \trautofit1 \trbrdrr\brdrnil \trbrdrl\brdrnil 
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx4000
+\row}\pard
+
+\trowd\trgaph30 \trautofit1 \trbrdrr\brdrnil \trbrdrl\brdrnil 
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx4000
+
+\pard\plain \intbl\itap1\ql{\f2\fs22\b0\i0\cf1 SMOG RANK}\cell{
+\trowd\trgaph30 \trautofit1 \trbrdrr\brdrnil \trbrdrl\brdrnil 
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx4000
+\row}\pard
+
+\trowd\trgaph30 \trautofit1 \trbrdrr\brdrnil \trbrdrl\brdrnil 
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx4000
+
+\pard\plain \intbl\itap1\ql{\f2\fs22\b0\i0\cf1 Flesch Kincaid Grade Level}\cell{
+\trowd\trgaph30 \trautofit1 \trbrdrr\brdrnil \trbrdrl\brdrnil 
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx4000
+\row}\pard
+
+\trowd\trgaph30 \trautofit1 \trbrdrr\brdrnil \trbrdrl\brdrnil 
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx4000
+
+\pard\plain \intbl\itap1\ql{\f2\fs22\b0\i0\cf1 Flesch Kincaid RANK}\cell{
+\trowd\trgaph30 \trautofit1 \trbrdrr\brdrnil \trbrdrl\brdrnil 
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx4000
+\row}\pard
+
+\trowd\trgaph30 \trautofit1 \trbrdrr\brdrnil \trbrdrl\brdrnil 
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx4000
+
+\pard\plain \intbl\itap1\ql{\f2\fs22\b0\i0\cf1 Agreement between readability ratings}\cell{
+\trowd\trgaph30 \trautofit1 \trbrdrr\brdrnil \trbrdrl\brdrnil 
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx4000
+\row}\pard
+
+\trowd\trgaph30 \trautofit1 \trbrdrr\brdrnil \trbrdrl\brdrnil 
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx4000
+
+\pard\plain \intbl\itap1\ql{\f2\fs22\b0\i0\cf1 faces no}\cell{
+\trowd\trgaph30 \trautofit1 \trbrdrr\brdrnil \trbrdrl\brdrnil 
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx4000
+\row}\pard
+
+\trowd\trgaph30 \trautofit1 \trbrdrr\brdrnil \trbrdrl\brdrnil 
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx4000
+
+\pard\plain \intbl\itap1\ql{\f2\fs22\b0\i0\cf1 face exist}\cell{
+\trowd\trgaph30 \trautofit1 \trbrdrr\brdrnil \trbrdrl\brdrnil 
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx4000
+\row}\pard
+
+\trowd\trgaph30 \trautofit1 \trbrdrr\brdrnil \trbrdrl\brdrnil 
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx4000
+
+\pard\plain \intbl\itap1\ql{\f2\fs22\b0\i0\cf1 SORROW}\cell{
+\trowd\trgaph30 \trautofit1 \trbrdrr\brdrnil \trbrdrl\brdrnil 
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx4000
+\row}\pard
+
+\trowd\trgaph30 \trautofit1 \trbrdrr\brdrnil \trbrdrl\brdrnil 
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx4000
+
+\pard\plain \intbl\itap1\ql{\f2\fs22\b0\i0\cf1 SURPRICE}\cell{
+\trowd\trgaph30 \trautofit1 \trbrdrr\brdrnil \trbrdrl\brdrnil 
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx4000
+\row}\pard
+
+\trowd\trgaph30 \trautofit1 \trbrdrr\brdrnil \trbrdrl\brdrnil 
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx4000
+
+\pard\plain \intbl\itap1\ql{\f2\fs22\b0\i0\cf1 JOY}\cell{
+\trowd\trgaph30 \trautofit1 \trbrdrr\brdrnil \trbrdrl\brdrnil 
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx4000
+\row}\pard
+
+\trowd\trgaph30 \trautofit1 \trbrdrr\brdrnil \trbrdrl\brdrnil 
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx4000
+
+\pard\plain \intbl\itap1\ql{\f2\fs22\b0\i0\cf1 ANGER}\cell{
+\trowd\trgaph30 \trautofit1 \trbrdrr\brdrnil \trbrdrl\brdrnil 
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx4000
+\row}\pard
+
+\trowd\trgaph30 \trautofit1 \trbrdrr\brdrnil \trbrdrl\brdrnil 
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx4000
+
+\pard\plain \intbl\itap1\ql{\f2\fs22\b0\i0\cf1 Text Existance in Photo}\cell{
+\trowd\trgaph30 \trautofit1 \trbrdrr\brdrnil \trbrdrl\brdrnil 
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx4000
+\row}\pard
+
+\trowd\trgaph30 \trautofit1 \trbrdrr\brdrnil \trbrdrl\brdrnil 
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx4000
+
+\pard\plain \intbl\itap1\ql{\f2\fs22\b0\i0\cf1 Image Text Word Count}\cell{
+\trowd\trgaph30 \trautofit1 \trbrdrr\brdrnil \trbrdrl\brdrnil 
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx4000
+\row}\pard
+
+\trowd\trgaph30 \trautofit1 \trbrdrr\brdrnil \trbrdrl\brdrnil 
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx4000
+
+\pard\plain \intbl\itap1\ql{\f2\fs22\b0\i0\cf1 Brand Name in Photo Text}\cell{
+\trowd\trgaph30 \trautofit1 \trbrdrr\brdrnil \trbrdrl\brdrnil 
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx4000
+\row}\pard
+
+\trowd\trgaph30 \trautofit1 \trbrdrr\brdrnil \trbrdrl\brdrnil 
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx4000
+
+\pard\plain \intbl\itap1\ql{\f2\fs22\b0\i0\cf1 Dominant Color Names in Image}\cell{
+\trowd\trgaph30 \trautofit1 \trbrdrr\brdrnil \trbrdrl\brdrnil 
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx4000
+\row}\pard
+
+\trowd\trgaph30 \trautofit1 \trbrdrr\brdrnil \trbrdrl\brdrnil 
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx4000
+
+\pard\plain \intbl\itap1\ql{\f2\fs22\b0\i0\cf1 html4_color}\cell{
+\trowd\trgaph30 \trautofit1 \trbrdrr\brdrnil \trbrdrl\brdrnil 
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx4000
+\row}\pard
+
+\trowd\trgaph30 \trautofit1\lastrow \trbrdrr\brdrnil \trbrdrb\brdrnil \trbrdrl\brdrnil 
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx4000
+
+\pard\plain \intbl\itap1\ql{\f2\fs22\b0\i0\cf1 Number of Hashtags in Post Text}\cell{
+\trowd\trgaph30 \trautofit1\lastrow \trbrdrr\brdrnil \trbrdrb\brdrnil \trbrdrl\brdrnil 
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx4000
+\row}\pard
+\pard\plain \ltrch\loch \f0\fs24\b0\i0
+\par\plain {\f0\fs24\b0\i0 We now had to transform this data to a more SPSS friendly type. So we created another xlsx file that we named coded_for_spss.xlsx and had the following columns:}
+\par\plain \f0\fs24\b0\i0
+
+
+\trowd\trgaph30 \trautofit1 \trbrdrt\brdrnil \trbrdrr\brdrnil \trbrdrl\brdrnil 
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx4320
+
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx8640
+
+\pard\plain \intbl\itap1\ql{\f2\fs22\b0\i0\cf1 Company Name}\cell 
+\pard\plain \intbl\itap1{\f2\fs22\b0\i0\cf1 Name of the Company (string)}\cell{
+\trowd\trgaph30 \trautofit1 \trbrdrt\brdrnil \trbrdrr\brdrnil \trbrdrl\brdrnil 
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx4320
+
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx8640
+\row}\pard
+
+\trowd\trgaph30 \trautofit1 \trbrdrr\brdrnil \trbrdrl\brdrnil 
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx4320
+
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx8640
+
+\pard\plain \intbl\itap1\ql{\f2\fs22\b0\i0\cf1 company}\cell 
+\pard\plain \intbl\itap1{\f2\fs22\b0\i0\cf1 Numeric Value (e.g. 1 = abbott, 2 = amgen etc)}\cell{
+\trowd\trgaph30 \trautofit1 \trbrdrr\brdrnil \trbrdrl\brdrnil 
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx4320
+
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx8640
+\row}\pard
+
+\trowd\trgaph30 \trautofit1 \trbrdrr\brdrnil \trbrdrl\brdrnil 
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx4320
+
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx8640
+
+\pard\plain \intbl\itap1\ql{\f2\fs22\b0\i0\cf1 postUrl}\cell 
+\pard\plain \intbl\itap1{\f2\fs22\b0\i0\cf1 The URL of the post}\cell{
+\trowd\trgaph30 \trautofit1 \trbrdrr\brdrnil \trbrdrl\brdrnil 
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx4320
+
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx8640
+\row}\pard
+
+\trowd\trgaph30 \trautofit1 \trbrdrr\brdrnil \trbrdrl\brdrnil 
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx4320
+
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx8640
+
+\pard\plain \intbl\itap1\ql{\f2\fs22\b0\i0\cf1 Type}\cell 
+\pard\plain \intbl\itap1\ql{\f2\fs22\b0\i0\cf1 The type of the post. Possible values: Article, image, poll, text, live video, video (external source), video (internal source)}\cell{
+\trowd\trgaph30 \trautofit1 \trbrdrr\brdrnil \trbrdrl\brdrnil 
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx4320
+
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx8640
+\row}\pard
+
+\trowd\trgaph30 \trautofit1 \trbrdrr\brdrnil \trbrdrl\brdrnil 
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx4320
+
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx8640
+
+\pard\plain \intbl\itap1\ql{\f2\fs22\b0\i0\cf1 post_type}\cell 
+\pard\plain \intbl\itap1{\f2\fs22\b0\i0\cf1 Numeric Values (e.g. 1 = artile, 2 = image etc)}\cell{
+\trowd\trgaph30 \trautofit1 \trbrdrr\brdrnil \trbrdrl\brdrnil 
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx4320
+
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx8640
+\row}\pard
+
+\trowd\trgaph30 \trautofit1 \trbrdrr\brdrnil \trbrdrl\brdrnil 
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx4320
+
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx8640
+
+\pard\plain \intbl\itap1\ql{\f2\fs22\b0\i0\cf1 word count}\cell 
+\pard\plain \intbl\itap1{\f2\fs22\b0\i0\cf1 Number of words inside text (0 included)}\cell{
+\trowd\trgaph30 \trautofit1 \trbrdrr\brdrnil \trbrdrl\brdrnil 
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx4320
+
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx8640
+\row}\pard
+
+\trowd\trgaph30 \trautofit1 \trbrdrr\brdrnil \trbrdrl\brdrnil 
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx4320
+
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx8640
+
+\pard\plain \intbl\itap1\ql{\f2\fs22\b0\i0\cf1 likeCount}\cell 
+\pard\plain \intbl\itap1{\f2\fs22\b0\i0\cf1 Number of likes a post got (0 included)}\cell{
+\trowd\trgaph30 \trautofit1 \trbrdrr\brdrnil \trbrdrl\brdrnil 
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx4320
+
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx8640
+\row}\pard
+
+\trowd\trgaph30 \trautofit1 \trbrdrr\brdrnil \trbrdrl\brdrnil 
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx4320
+
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx8640
+
+\pard\plain \intbl\itap1\ql{\f2\fs22\b0\i0\cf1 commentCount}\cell 
+\pard\plain \intbl\itap1{\f2\fs22\b0\i0\cf1 Number of comments a post got (0 included)}\cell{
+\trowd\trgaph30 \trautofit1 \trbrdrr\brdrnil \trbrdrl\brdrnil 
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx4320
+
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx8640
+\row}\pard
+
+\trowd\trgaph30 \trautofit1 \trbrdrr\brdrnil \trbrdrl\brdrnil 
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx4320
+
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx8640
+
+\pard\plain \intbl\itap1\ql{\f2\fs22\b0\i0\cf1 SMOG}\cell 
+\pard\plain \intbl\itap1{\f2\fs22\b0\i0\cf1 SMOG rating. Outlier of \loch\af2\hich\af2\dbch\af2\uc1\u8220\'933.13\u8221\'94 value was found to be the default value of the posts that had not a single word (wordcount = 0). We selected case with more than 0 words for any descriptive or statistical analysis involving SMOG }\cell{
+\trowd\trgaph30 \trautofit1 \trbrdrr\brdrnil \trbrdrl\brdrnil 
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx4320
+
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx8640
+\row}\pard
+
+\trowd\trgaph30 \trautofit1 \trbrdrr\brdrnil \trbrdrl\brdrnil 
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx4320
+
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx8640
+
+\pard\plain \intbl\itap1\ql{\f2\fs22\b0\i0\cf1 SMOG RANK}\cell 
+\pard\plain \intbl\itap1{\f2\fs22\b0\i0\cf1 Easy/Medium/Hard values}\cell{
+\trowd\trgaph30 \trautofit1 \trbrdrr\brdrnil \trbrdrl\brdrnil 
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx4320
+
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx8640
+\row}\pard
+
+\trowd\trgaph30 \trautofit1 \trbrdrr\brdrnil \trbrdrl\brdrnil 
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx4320
+
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx8640
+
+\pard\plain \intbl\itap1\ql{\f2\fs22\b0\i0\cf1 smog_rank_spss}\cell 
+\pard\plain \intbl\itap1{\f2\fs22\b0\i0\cf1 Numeric value of ordinal type (=IF(J356="EASY",1,IF(J356="MEDIUM",2,3))}\cell{
+\trowd\trgaph30 \trautofit1 \trbrdrr\brdrnil \trbrdrl\brdrnil 
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx4320
+
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx8640
+\row}\pard
+
+\trowd\trgaph30 \trautofit1 \trbrdrr\brdrnil \trbrdrl\brdrnil 
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx4320
+
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx8640
+
+\pard\plain \intbl\itap1\ql{\f2\fs22\b0\i0\cf1 Flesch Kincaid Grade Level}\cell 
+\pard\plain \intbl\itap1{\f2\fs22\b0\i0\cf1 FKGL rating. Outlier of \loch\af2\hich\af2\dbch\af2\uc1\u8220\'93-15.59\u8221\'94 value was found to be the default value of the posts that had not a single word (wordcount = 0). We selected case with more than 0 words for any descriptive or statistical analysis involving FKGL }\cell{
+\trowd\trgaph30 \trautofit1 \trbrdrr\brdrnil \trbrdrl\brdrnil 
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx4320
+
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx8640
+\row}\pard
+
+\trowd\trgaph30 \trautofit1 \trbrdrr\brdrnil \trbrdrl\brdrnil 
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx4320
+
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx8640
+
+\pard\plain \intbl\itap1\ql{\f2\fs22\b0\i0\cf1 Flesch Kincaid RANK}\cell 
+\pard\plain \intbl\itap1{\f2\fs22\b0\i0\cf1 Easy/Medium/Hard values}\cell{
+\trowd\trgaph30 \trautofit1 \trbrdrr\brdrnil \trbrdrl\brdrnil 
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx4320
+
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx8640
+\row}\pard
+
+\trowd\trgaph30 \trautofit1 \trbrdrr\brdrnil \trbrdrl\brdrnil 
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx4320
+
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx8640
+
+\pard\plain \intbl\itap1\ql{\f2\fs22\b0\i0\cf1 flesch_rank_spss}\cell 
+\pard\plain \intbl\itap1{\f2\fs22\b0\i0\cf1 Numeric value of ordinal type (=IF(M356="EASY",1,IF(M356="MEDIUM",2,3)))}\cell{
+\trowd\trgaph30 \trautofit1 \trbrdrr\brdrnil \trbrdrl\brdrnil 
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx4320
+
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx8640
+\row}\pard
+
+\trowd\trgaph30 \trautofit1 \trbrdrr\brdrnil \trbrdrl\brdrnil 
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx4320
+
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx8640
+
+\pard\plain \intbl\itap1\ql{\f2\fs22\b0\i0\cf1 Agreement between readability ratings}\cell 
+\pard\plain \intbl\itap1{\f2\fs22\b0\i0\cf1 AGREE/NOT values based on weather the two indices are both on the same level (easy/medium/hard) or not}\cell{
+\trowd\trgaph30 \trautofit1 \trbrdrr\brdrnil \trbrdrl\brdrnil 
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx4320
+
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx8640
+\row}\pard
+
+\trowd\trgaph30 \trautofit1 \trbrdrr\brdrnil \trbrdrl\brdrnil 
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx4320
+
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx8640
+
+\pard\plain \intbl\itap1\ql{\f2\fs22\b0\i0\cf1 agreement_spss}\cell 
+\pard\plain \intbl\itap1{\f2\fs22\b0\i0\cf1 Numeric Value of Nominal Type (=IF(O356="AGREE",1,0))}\cell{
+\trowd\trgaph30 \trautofit1 \trbrdrr\brdrnil \trbrdrl\brdrnil 
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx4320
+
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx8640
+\row}\pard
+
+\trowd\trgaph30 \trautofit1 \trbrdrr\brdrnil \trbrdrl\brdrnil 
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx4320
+
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx8640
+
+\pard\plain \intbl\itap1\ql{\f2\fs22\b0\i0\cf1 faces no}\cell 
+\pard\plain \intbl\itap1{\f2\fs22\b0\i0\cf1 Number of faces in an image. Blanks for not accessible ones and \loch\af2\hich\af2\dbch\af2\uc1\u8220\'93no image\u8221\'94 included. Case selection used in SPSS wherever needed}\cell{
+\trowd\trgaph30 \trautofit1 \trbrdrr\brdrnil \trbrdrl\brdrnil 
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx4320
+
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx8640
+\row}\pard
+
+\trowd\trgaph30 \trautofit1 \trbrdrr\brdrnil \trbrdrl\brdrnil 
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx4320
+
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx8640
+
+\pard\plain \intbl\itap1\ql{\f2\fs22\b0\i0\cf1 face exist}\cell 
+\pard\plain \intbl\itap1{\f2\fs22\b0\i0\cf1 String Value. YES/NO/No Image/NA}\cell{
+\trowd\trgaph30 \trautofit1 \trbrdrr\brdrnil \trbrdrl\brdrnil 
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx4320
+
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx8640
+\row}\pard
+
+\trowd\trgaph30 \trautofit1 \trbrdrr\brdrnil \trbrdrl\brdrnil 
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx4320
+
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx8640
+
+\pard\plain \intbl\itap1\ql{\f2\fs22\b0\i0\cf1 face_existance_in_photo}\cell 
+\pard\plain \intbl\itap1{\f2\fs22\b0\i0\cf1 Numeric value of Nominal Type (=IF(R2="YES",1,IF(R2="NO",0,8))) 8 was used for the no image and not accessible ones and got treated as a missing value in SPSS.}\cell{
+\trowd\trgaph30 \trautofit1 \trbrdrr\brdrnil \trbrdrl\brdrnil 
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx4320
+
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx8640
+\row}\pard
+
+\trowd\trgaph30 \trautofit1 \trbrdrr\brdrnil \trbrdrl\brdrnil 
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx4320
+
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx8640
+
+\pard\plain \intbl\itap1\ql{\f2\fs22\b0\i0\cf1 SORROW}\cell 
+\pard\plain \intbl\itap1{\f2\fs22\b0\i0\cf1 YES/NO}\cell{
+\trowd\trgaph30 \trautofit1 \trbrdrr\brdrnil \trbrdrl\brdrnil 
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx4320
+
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx8640
+\row}\pard
+
+\trowd\trgaph30 \trautofit1 \trbrdrr\brdrnil \trbrdrl\brdrnil 
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx4320
+
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx8640
+
+\pard\plain \intbl\itap1\ql{\f2\fs22\b0\i0\cf1 SURPRICE}\cell 
+\pard\plain \intbl\itap1{\f2\fs22\b0\i0\cf1 YES/NO}\cell{
+\trowd\trgaph30 \trautofit1 \trbrdrr\brdrnil \trbrdrl\brdrnil 
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx4320
+
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx8640
+\row}\pard
+
+\trowd\trgaph30 \trautofit1 \trbrdrr\brdrnil \trbrdrl\brdrnil 
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx4320
+
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx8640
+
+\pard\plain \intbl\itap1\ql{\f2\fs22\b0\i0\cf1 JOY}\cell 
+\pard\plain \intbl\itap1{\f2\fs22\b0\i0\cf1 YES/NO}\cell{
+\trowd\trgaph30 \trautofit1 \trbrdrr\brdrnil \trbrdrl\brdrnil 
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx4320
+
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx8640
+\row}\pard
+
+\trowd\trgaph30 \trautofit1 \trbrdrr\brdrnil \trbrdrl\brdrnil 
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx4320
+
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx8640
+
+\pard\plain \intbl\itap1\ql{\f2\fs22\b0\i0\cf1 ANGER}\cell 
+\pard\plain \intbl\itap1{\f2\fs22\b0\i0\cf1 YES/NO}\cell{
+\trowd\trgaph30 \trautofit1 \trbrdrr\brdrnil \trbrdrl\brdrnil 
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx4320
+
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx8640
+\row}\pard
+
+\trowd\trgaph30 \trautofit1 \trbrdrr\brdrnil \trbrdrl\brdrnil 
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx4320
+
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx8640
+
+\pard\plain \intbl\itap1\ql{\f2\fs22\b0\i0\cf1 sorrow_spss}\cell 
+\pard\plain \intbl\itap1{\f2\fs22\b0\i0\cf1 Numeric Value of Nominal Type (=IF(T2="Yes",1,0))}\cell{
+\trowd\trgaph30 \trautofit1 \trbrdrr\brdrnil \trbrdrl\brdrnil 
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx4320
+
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx8640
+\row}\pard
+
+\trowd\trgaph30 \trautofit1 \trbrdrr\brdrnil \trbrdrl\brdrnil 
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx4320
+
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx8640
+
+\pard\plain \intbl\itap1\ql{\f2\fs22\b0\i0\cf1 surprise_spss}\cell 
+\pard\plain \intbl\itap1{\f2\fs22\b0\i0\cf1 Numeric Value of Nominal Type (=IF(T2="Yes",1,0))}\cell{
+\trowd\trgaph30 \trautofit1 \trbrdrr\brdrnil \trbrdrl\brdrnil 
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx4320
+
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx8640
+\row}\pard
+
+\trowd\trgaph30 \trautofit1 \trbrdrr\brdrnil \trbrdrl\brdrnil 
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx4320
+
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx8640
+
+\pard\plain \intbl\itap1\ql{\f2\fs22\b0\i0\cf1 joy_spss}\cell 
+\pard\plain \intbl\itap1{\f2\fs22\b0\i0\cf1 Numeric Value of Nominal Type (=IF(T2="Yes",1,0))}\cell{
+\trowd\trgaph30 \trautofit1 \trbrdrr\brdrnil \trbrdrl\brdrnil 
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx4320
+
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx8640
+\row}\pard
+
+\trowd\trgaph30 \trautofit1 \trbrdrr\brdrnil \trbrdrl\brdrnil 
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx4320
+
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx8640
+
+\pard\plain \intbl\itap1\ql{\f2\fs22\b0\i0\cf1 anger_spss}\cell 
+\pard\plain \intbl\itap1{\f2\fs22\b0\i0\cf1 Numeric Value of Nominal Type (=IF(T2="Yes",1,0))}\cell{
+\trowd\trgaph30 \trautofit1 \trbrdrr\brdrnil \trbrdrl\brdrnil 
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx4320
+
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx8640
+\row}\pard
+
+\trowd\trgaph30 \trautofit1 \trbrdrr\brdrnil \trbrdrl\brdrnil 
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx4320
+
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx8640
+
+\pard\plain \intbl\itap1\ql{\f2\fs22\b0\i0\cf1 Text Existance in Photo}\cell 
+\pard\plain \intbl\itap1{\f2\fs22\b0\i0\cf1 YES/NO/No Image/Not Accessible}\cell{
+\trowd\trgaph30 \trautofit1 \trbrdrr\brdrnil \trbrdrl\brdrnil 
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx4320
+
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx8640
+\row}\pard
+
+\trowd\trgaph30 \trautofit1 \trbrdrr\brdrnil \trbrdrl\brdrnil 
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx4320
+
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx8640
+
+\pard\plain \intbl\itap1\ql{\f2\fs22\b0\i0\cf1 text_existance_in_photo_spss}\cell 
+\pard\plain \intbl\itap1{\f2\fs22\b0\i0\cf1 Numeric Value of Nominal Type (=IF(AB2="YES",1,IF(AB2="NO",0,8)))}\cell{
+\trowd\trgaph30 \trautofit1 \trbrdrr\brdrnil \trbrdrl\brdrnil 
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx4320
+
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx8640
+\row}\pard
+
+\trowd\trgaph30 \trautofit1 \trbrdrr\brdrnil \trbrdrl\brdrnil 
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx4320
+
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx8640
+
+\pard\plain \intbl\itap1\ql{\f2\fs22\b0\i0\cf1 Image Text Word Count}\cell 
+\pard\plain \intbl\itap1{\f2\fs22\b0\i0\cf1 Word count in number format of the text found in each image (No Image/No text/Not Accessible included). Case selection was used in SPSS wherever neede.}\cell{
+\trowd\trgaph30 \trautofit1 \trbrdrr\brdrnil \trbrdrl\brdrnil 
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx4320
+
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx8640
+\row}\pard
+
+\trowd\trgaph30 \trautofit1 \trbrdrr\brdrnil \trbrdrl\brdrnil 
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx4320
+
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx8640
+
+\pard\plain \intbl\itap1\ql{\f2\fs22\b0\i0\cf1 Brand Name in Photo Text}\cell 
+\pard\plain \intbl\itap1{\f2\fs22\b0\i0\cf1 TRUE/FALSE/No Image (not accessible ones were classified to FALSE, so we were selecting cases in SPSS based on other variables and had a valid result)}\cell{
+\trowd\trgaph30 \trautofit1 \trbrdrr\brdrnil \trbrdrl\brdrnil 
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx4320
+
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx8640
+\row}\pard
+
+\trowd\trgaph30 \trautofit1 \trbrdrr\brdrnil \trbrdrl\brdrnil 
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx4320
+
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx8640
+
+\pard\plain \intbl\itap1\ql{\f2\fs22\b0\i0\cf1 brand_name_photo_text_spss}\cell 
+\pard\plain \intbl\itap1{\f2\fs22\b0\i0\cf1 Numeric Value of Nominal Type (=IF(AE6721="TRUE",1,0)). Again, case selection based on other variables helped with results that were \loch\af2\hich\af2\dbch\af2\uc1\u8220\'930\u8221\'94 but yet belonged to not accessible or \u8220\'93no image\u8221\'94 posts}\cell{
+\trowd\trgaph30 \trautofit1 \trbrdrr\brdrnil \trbrdrl\brdrnil 
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx4320
+
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx8640
+\row}\pard
+
+\trowd\trgaph30 \trautofit1 \trbrdrr\brdrnil \trbrdrl\brdrnil 
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx4320
+
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx8640
+
+\pard\plain \intbl\itap1\ql{\f2\fs22\b0\i0\cf1 Dominant Color Names in Image}\cell 
+\pard\plain \intbl\itap1{\f2\fs22\b0\i0\cf1 Css3 color classification (no image, not accessible and wrong color code included)}\cell{
+\trowd\trgaph30 \trautofit1 \trbrdrr\brdrnil \trbrdrl\brdrnil 
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx4320
+
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx8640
+\row}\pard
+
+\trowd\trgaph30 \trautofit1 \trbrdrr\brdrnil \trbrdrl\brdrnil 
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx4320
+
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx8640
+
+\pard\plain \intbl\itap1\ql{\f2\fs22\b0\i0\cf1 html4_color}\cell 
+\pard\plain \intbl\itap1{\f2\fs22\b0\i0\cf1 html4 color classification (blanks for no image, not accessible and wrong color code included)}\cell{
+\trowd\trgaph30 \trautofit1 \trbrdrr\brdrnil \trbrdrl\brdrnil 
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx4320
+
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx8640
+\row}\pard
+
+\trowd\trgaph30 \trautofit1 \trbrdrr\brdrnil \trbrdrl\brdrnil 
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx4320
+
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx8640
+
+\pard\plain \intbl\itap1\ql{\f2\fs22\b0\i0\cf1 html4_color_spss}\cell 
+\pard\plain \intbl\itap1{\f2\fs22\b0\i0\cf1 Numeric Value of Nominal Type (e.g. 1 = aqua, 2 = black etc) blanks signify the wrong color codes, not accessible and no image}\cell{
+\trowd\trgaph30 \trautofit1 \trbrdrr\brdrnil \trbrdrl\brdrnil 
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx4320
+
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx8640
+\row}\pard
+
+\trowd\trgaph30 \trautofit1\lastrow \trbrdrr\brdrnil \trbrdrb\brdrnil \trbrdrl\brdrnil 
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx4320
+
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx8640
+
+\pard\plain \intbl\itap1\ql{\f2\fs22\b0\i0\cf1 Number of Hashtags in Post Text}\cell 
+\pard\plain \intbl\itap1{\f2\fs22\b0\i0\cf1 Simple count of hashtags inside the post}\cell{
+\trowd\trgaph30 \trautofit1\lastrow \trbrdrr\brdrnil \trbrdrb\brdrnil \trbrdrl\brdrnil 
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx4320
+
+\clvertalt \clshdrawnil\clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \cellx8640
+\row}\pard
+\pard\plain \ltrch\loch {\f0\fs24\b0\i0  }
+\par\pard\plain \tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\sb260\sl262\slmult1\ltrch\loch {\f1\fs26\b1\i0 <$Scr_Ps::1><$Scr_H::2> <!$Scr_H::2><!$Scr_Ps::1>}
+\par\pard\plain \tx0\tx360\tx720\tx1080\tx1440\tx1800\tx2160\tx2880\tx3600\tx4320\fi360\ltrch\loch \f0\fs24\b0\i0
+\par\pard\plain \ltrch\loch {\field{\*\fldinst HYPERLINK "https://drafts.csswg.org/css-color-3"}{\fldrslt\f0\fs24\b0\i0 https://drafts.csswg.org/css-color-3}}{\f0\fs24\b0\i0 /}
+\par\plain \f0\fs24\b0\i0
+\par\plain {\f0\fs24\b0\i0\strike\strikec0 \loch\af0\hich\af0\dbch\af0\uc1\u928\'3F\u969\'3F\u962\'3F \u954\'3F\u945\'61\u964\'74\u945\'61\u955\'3F\u942\'3F\u958\'3F\u945\'61\u956\'B5\u949\'65 \u963\'73\u964\'74\u945\'61 \u945\'61\u960\'70 \u954\'3F\u945\'61\u953\'3F \u945\'61\u957\'3F \u956\'B5\u960\'70\u959\'3F\u961\'3F\u974\'3F \u957\'3F\u945\'61 \u946\'DF\u961\'3F\u969\'3F \u960\'70\u959\'3F\u953\'3F\u945\'61 \u940\'3F\u955\'3F\u955\'3F\u945\'61 \u949\'65\u943\'3F\u967\'3F\u945\'61 \u967\'3F\u961\'3F\u951\'3F\u963\'73\u953\'3F\u956\'B5\u959\'3F\u960\'70\u953\'3F\u959\'3F\u942\'3F\u963\'73\u949\'65\u953\'3F}
+\par\plain {\f0\fs24\b0\i0\strike\strikec0 \loch\af0\hich\af0\dbch\af0\uc1\u924\'3F\u949\'65\u964\'74\u945\'61\u946\'DF\u955\'3F\u951\'3F\u964\'74\u941\'3F\u962\'3F \u963\'73\u964\'74\u959\'3F \u963\'73\u960\'70\u963\'73\u963\'73 \u947\'3F\u953\'3F\u945\'61 \u964\'74\u945\'61 \u967\'3F\u961\'3F\u974\'3F\u956\'B5\u945\'61\u964\'74\u945\'61 \u954\'3F\u945\'61\u953\'3F \u964\'74\u959\'3F \u951\'3F\u956\'B5\u964\'74\u955\'3F4}
+\par\plain {\f0\fs24\b0\i0\strike\strikec0 \loch\af0\hich\af0\dbch\af0\uc1\u925\'3F\u945\'61 \u947\'3F\u961\'3F\u940\'3F\u968\'3F\u959\'3F\u965\'3F\u956\'B5\u949\'65 \u964\'74\u959\'3F\u965\'3F\u962\'3F \u954\'3F\u969\'3F\u948\'64\u953\'3F\u954\'3F\u959\'3F\u973\'3F\u962\'3F \u964\'74\u959\'3F\u965\'3F \u949\'65\u958\'3F\u941\'3F\u955\'3F \u947\'3F\u953\'3F\u945\'61 \u964\'74\u953\'3F\u962\'3F \u956\'B5\u949\'65\u964\'74\u945\'61\u946\'DF\u955\'3F\u942\'3F\u964\'74\u949\'65\u962\'3F}
+\par\plain {\f0\fs24\b0\i0\strike\strikec0 \loch\af0\hich\af0\dbch\af0\uc1\u915\'47\u953\'3F\u945\'61 \u964\'74\u959\'3F\u957\'3F \u963\'73\u956\'B5\u959\'3F\u947\'3F\u954\'3F \u954\'3F\u945\'61\u953\'3F \u964\'74\u959\'3F\u957\'3F \u966\'66\u955\'3F\u949\'65\u962\'3F \u960\'70\u969\'3F\u962\'3F \u964\'74\u945\'61 \u967\'3F\u969\'3F\u961\'3F\u943\'3F\u963\'73\u945\'61\u956\'B5\u949\'65 \u963\'73\u949\'65 \u949\'65\u973\'3F\u954\'3F\u959\'3F\u955\'3F\u959\'3F \u956\'B5\u941\'3F\u964\'74\u961\'3F\u953\'3F\u959\'3F \u948\'64\u973\'3F\u963\'73\u954\'3F\u959\'3F\u955\'3F\u959\'3F}
+\par\plain {\f0\fs24\b0\i0 \loch\af0\hich\af0\dbch\af0\uc1\u928\'3F\u974\'3F\u962\'3F \u954\'3F\u945\'61\u964\'74\u945\'61\u955\'3F\u942\'3F\u958\'3F\u945\'61\u956\'B5\u949\'65 \u963\'73\u949\'65 \u945\'61\u965\'3F\u964\'74\u941\'3F\u962\'3F \u964\'74\u953\'3F\u962\'3F \u949\'65\u964\'74\u945\'61\u953\'3F\u961\'3F\u943\'3F\u949\'65\u962\'3F}
+\par\plain {\f0\fs24\b0\i0 \loch\af0\hich\af0\dbch\af0\uc1\u925\'3F\u945\'61 \u945\'61\u957\'3F\u945\'61\u966\'66\u941\'3F\u961\'3F\u969\'3F \u964\'74\u959\'3F\u957\'3F \u960\'70\u943\'3F\u957\'3F\u945\'61\u954\'3F\u945\'61 \u956\'B5\u949\'65 \u964\'74\u945\'61 \u963\'73\u972\'3F\u963\'73\u953\'3F\u945\'61\u955\'3F \u964\'74\u969\'3F\u957\'3F \u949\'65\u964\'74\u945\'61\u953\'3F\u961\'3F\u953\'3F\u974\'3F\u957\'3F}
 \par\plain \f0\fs24\b0\i0
 \par\plain \f0\fs24\b0\i0}
