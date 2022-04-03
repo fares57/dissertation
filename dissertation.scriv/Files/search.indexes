@@ -19,6 +19,43 @@ Comments are affected by Flesch
         <Document ID="2224D433-7CA8-43B4-9E8B-5FA21EB234CD">
             <Title>Statistical Analysis</Title>
         </Document>
+        <Document ID="4817D7D6-C033-41FE-9333-1EEA1F36AD13">
+            <Title>Companies</Title>
+            <Text>Companies Chosen
+We decided to choose some famous and financially stable multinational corporations of the Pharmaceutical industry. There was not a certain criteria that had to be met for a company to enter the list. It was more of a subjective opinion regarding the fame and success of the company.
+The initial scope included the Greek branches of these companies (wherever existed) plus  companies that are Greek but, during the research, we realised that Greek companies or branches had much fewer social media than the ones of mother companies and there was no consistency between these companies. Eventually, we ended up with the following companies that gave us 6924 linkedin posts that were finally analyzed
+
+abbott  
+amgen 
+astellaspharmainc 
+astrazeneca 
+basf 
+baxter healthcare 
+bayer 
+beiersdorf 
+boehringer ingelheim 
+bristol myers squibb 
+chiesi group 
+eli lilly
+gilead sciences 
+glaxosmithkline 
+janssen pharmaceutical companies of johnson and johnson 
+leo pharma 
+merck 
+merck group 
+novartis 
+novo nordisk 
+pfizer 
+roche 
+sanofi 
+ucb pharma 
+
+
+Social Media Channels
+As one can see in the crosstable below, all of the companies have a linkedin account. Instagram is the least common social media channel while Twitter is the second most frequent. Youtube is also there for almost 90% of the companies analyzed and we were ready to use the Google Video API for analyzing the videos of the companies but, both time restrictions and the scope of this dissertation made us abandon the YT channel. Facebook restrictions and Twitter will be discussed later.
+#
+</Text>
+        </Document>
         <Document ID="5DE5963D-AA84-4A40-B5F6-7222D0958D28">
             <Title>Facebook Scrape</Title>
             <Text>Facebook Scraping
@@ -253,8 +290,8 @@ html4_color_spss
 Numeric Value of Nominal Type (e.g. 1 = aqua, 2 = black etc) blanks signify the wrong color codes, not accessible and no image
 Number of Hashtags in Post Text
 Simple count of hashtags inside the post
- 
 
+ 
  
 
 https://drafts.csswg.org/css-color-3/

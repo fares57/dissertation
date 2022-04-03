@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ScrivenerProject Template="No" Version="2.0" Identifier="351921F4-A161-4183-9AB6-4D4771A7242D" Creator="SCRWIN-3.1.1.0" Device="LAPTOP-L9J78L8B" Modified="2022-03-26 20:29:51 +0200" ModID="A13973DC-38E2-4B46-8614-A2A798979B0D">
+<ScrivenerProject Template="No" Version="2.0" Identifier="351921F4-A161-4183-9AB6-4D4771A7242D" Creator="SCRWIN-3.1.1.0" Device="LAPTOP-L9J78L8B" Modified="2022-04-03 13:26:36 +0300" ModID="ED5DBAD3-5703-4D4E-9F51-33815ED5AC3B">
     <Binder>
-        <BinderItem UUID="441E5FAB-4419-4A3D-A165-F5629866B83B" Type="DraftFolder" Created="2022-02-13 10:49:29 +0200" Modified="2022-02-13 13:54:52 +0200">
+        <BinderItem UUID="441E5FAB-4419-4A3D-A165-F5629866B83B" Type="DraftFolder" Created="2022-02-13 10:49:29 +0300" Modified="2022-02-13 13:54:52 +0300">
             <Title>DISSERTATION</Title>
             <MetaData>
                 <IncludeInCompile>Yes</IncludeInCompile>
             </MetaData>
             <Children>
-                <BinderItem UUID="E471F7BB-3E22-4270-9E98-B545E8D2733F" Type="Folder" Created="2022-03-23 18:45:18 +0200" Modified="2022-03-23 18:45:25 +0200">
+                <BinderItem UUID="E471F7BB-3E22-4270-9E98-B545E8D2733F" Type="Folder" Created="2022-03-23 18:45:18 +0300" Modified="2022-03-23 18:45:25 +0300">
                     <Title>writing</Title>
                     <MetaData>
                         <IncludeInCompile>Yes</IncludeInCompile>
@@ -16,7 +16,7 @@
                         <TextSelection>0,0</TextSelection>
                     </TextSettings>
                     <Children>
-                        <BinderItem UUID="5DE5963D-AA84-4A40-B5F6-7222D0958D28" Type="Text" Created="2022-02-27 12:17:03 +0200" Modified="2022-03-23 18:50:14 +0200">
+                        <BinderItem UUID="5DE5963D-AA84-4A40-B5F6-7222D0958D28" Type="Text" Created="2022-02-27 12:17:03 +0300" Modified="2022-03-23 18:50:14 +0300">
                             <Title>Facebook Scrape</Title>
                             <MetaData>
                                 <IncludeInCompile>Yes</IncludeInCompile>
@@ -25,18 +25,27 @@
                                 <TextSelection>18,0</TextSelection>
                             </TextSettings>
                         </BinderItem>
-                        <BinderItem UUID="7882929E-AB7F-443F-B363-07250D5C53C5" Type="Text" Created="2022-03-23 18:49:47 +0200" Modified="2022-03-26 20:23:26 +0200">
+                        <BinderItem UUID="7882929E-AB7F-443F-B363-07250D5C53C5" Type="Text" Created="2022-03-23 18:49:47 +0300" Modified="2022-03-27 16:32:58 +0300">
                             <Title>Linkedin Scraping</Title>
                             <MetaData>
                                 <IncludeInCompile>Yes</IncludeInCompile>
                             </MetaData>
                             <TextSettings>
-                                <TextSelection>13210,0</TextSelection>
+                                <TextSelection Caret="12687">12563,124</TextSelection>
+                            </TextSettings>
+                        </BinderItem>
+                        <BinderItem UUID="4817D7D6-C033-41FE-9333-1EEA1F36AD13" Type="Text" Created="2022-03-27 15:42:09 +0300" Modified="2022-03-27 15:58:03 +0300">
+                            <Title>Companies</Title>
+                            <MetaData>
+                                <IncludeInCompile>Yes</IncludeInCompile>
+                            </MetaData>
+                            <TextSettings>
+                                <TextSelection>714,0</TextSelection>
                             </TextSettings>
                         </BinderItem>
                     </Children>
                 </BinderItem>
-                <BinderItem UUID="2224D433-7CA8-43B4-9E8B-5FA21EB234CD" Type="Folder" Created="2022-03-12 16:17:28 +0200" Modified="2022-03-12 16:17:39 +0200">
+                <BinderItem UUID="2224D433-7CA8-43B4-9E8B-5FA21EB234CD" Type="Folder" Created="2022-03-12 16:17:28 +0300" Modified="2022-03-12 16:17:39 +0300">
                     <Title>Statistical Analysis</Title>
                     <MetaData>
                         <IncludeInCompile>Yes</IncludeInCompile>
@@ -45,7 +54,7 @@
                         <TextSelection>0,0</TextSelection>
                     </TextSettings>
                     <Children>
-                        <BinderItem UUID="2169599F-99D8-4549-B6FC-C5C5F8C75DDA" Type="Text" Created="2022-03-12 16:17:44 +0200" Modified="2022-03-12 17:55:20 +0200">
+                        <BinderItem UUID="2169599F-99D8-4549-B6FC-C5C5F8C75DDA" Type="Text" Created="2022-03-12 16:17:44 +0300" Modified="2022-03-12 17:55:20 +0300">
                             <Title>Notes on Seikh's Work</Title>
                             <MetaData>
                                 <IncludeInCompile>Yes</IncludeInCompile>
@@ -56,7 +65,7 @@
                         </BinderItem>
                     </Children>
                 </BinderItem>
-                <BinderItem UUID="75CB004A-FFDB-4E73-BE8B-0052EC133B76" Type="Folder" Created="2022-02-13 13:54:56 +0200" Modified="2022-02-13 13:55:01 +0200">
+                <BinderItem UUID="75CB004A-FFDB-4E73-BE8B-0052EC133B76" Type="Folder" Created="2022-02-13 13:54:56 +0300" Modified="2022-02-13 13:55:01 +0300">
                     <Title>Scrapes</Title>
                     <MetaData>
                         <IncludeInCompile>Yes</IncludeInCompile>
@@ -65,7 +74,7 @@
                         <TextSelection>0,0</TextSelection>
                     </TextSettings>
                     <Children>
-                        <BinderItem UUID="7B619649-215D-4F7C-8771-18C7431F9644" Type="Text" Created="2022-02-13 10:49:29 +0200" Modified="2022-03-23 18:45:39 +0200">
+                        <BinderItem UUID="7B619649-215D-4F7C-8771-18C7431F9644" Type="Text" Created="2022-02-13 10:49:29 +0300" Modified="2022-03-23 18:45:39 +0300">
                             <Title>Linkedin Scrape notes</Title>
                             <MetaData>
                                 <IncludeInCompile>Yes</IncludeInCompile>
@@ -74,7 +83,7 @@
                                 <TextSelection>2009,0</TextSelection>
                             </TextSettings>
                         </BinderItem>
-                        <BinderItem UUID="9077913A-143A-489C-A217-D0A70003E026" Type="Text" Created="2022-02-20 10:38:46 +0200" Modified="2022-03-23 18:45:43 +0200">
+                        <BinderItem UUID="9077913A-143A-489C-A217-D0A70003E026" Type="Text" Created="2022-02-20 10:38:46 +0300" Modified="2022-03-23 18:45:43 +0300">
                             <Title>Instagram Scrape notes</Title>
                             <MetaData>
                                 <IncludeInCompile>Yes</IncludeInCompile>
@@ -83,7 +92,7 @@
                                 <TextSelection>3,0</TextSelection>
                             </TextSettings>
                         </BinderItem>
-                        <BinderItem UUID="CEA5B0D1-B201-4044-9DC4-3D1BD77C42C7" Type="Text" Created="2022-03-04 20:57:49 +0200" Modified="2022-03-04 20:57:55 +0200">
+                        <BinderItem UUID="CEA5B0D1-B201-4044-9DC4-3D1BD77C42C7" Type="Text" Created="2022-03-04 20:57:49 +0300" Modified="2022-03-04 20:57:55 +0300">
                             <Title>upwork</Title>
                             <MetaData>
                                 <IncludeInCompile>Yes</IncludeInCompile>
@@ -94,7 +103,7 @@
                         </BinderItem>
                     </Children>
                 </BinderItem>
-                <BinderItem UUID="F14F803E-BA9D-4AC9-8B36-C756AF2D69B2" Type="Text" Created="2022-02-20 11:07:17 +0200" Modified="2022-02-27 15:29:54 +0200">
+                <BinderItem UUID="F14F803E-BA9D-4AC9-8B36-C756AF2D69B2" Type="Text" Created="2022-02-20 11:07:17 +0300" Modified="2022-02-27 15:29:54 +0300">
                     <Title>Research Hypotheses</Title>
                     <MetaData>
                         <IncludeInCompile>Yes</IncludeInCompile>
@@ -105,7 +114,7 @@
                 </BinderItem>
             </Children>
         </BinderItem>
-        <BinderItem UUID="835BCD71-B6CD-4DB4-8F40-EAC35599488C" Type="Text" Created="2022-02-13 14:01:51 +0200" Modified="2022-02-13 14:04:07 +0200">
+        <BinderItem UUID="835BCD71-B6CD-4DB4-8F40-EAC35599488C" Type="Text" Created="2022-02-13 14:01:51 +0300" Modified="2022-02-13 14:04:07 +0300">
             <Title>Bibliography</Title>
             <MetaData>
                 <IncludeInCompile>Yes</IncludeInCompile>
@@ -114,19 +123,19 @@
                 <TextSelection Caret="325">201,124</TextSelection>
             </TextSettings>
         </BinderItem>
-        <BinderItem UUID="012344F0-F9A4-459C-A342-0A3ABFB7E947" Type="ResearchFolder" Created="2022-02-13 10:49:29 +0200" Modified="2022-02-13 10:49:29 +0200">
+        <BinderItem UUID="012344F0-F9A4-459C-A342-0A3ABFB7E947" Type="ResearchFolder" Created="2022-02-13 10:49:29 +0300" Modified="2022-02-13 10:49:29 +0300">
             <Title>Research</Title>
             <MetaData>
                 <IncludeInCompile>Yes</IncludeInCompile>
             </MetaData>
         </BinderItem>
-        <BinderItem UUID="0CDEEB9A-0F39-4B54-A165-428494FA4F69" Type="TrashFolder" Created="2022-02-13 10:49:29 +0200" Modified="2022-02-13 10:49:29 +0200">
+        <BinderItem UUID="0CDEEB9A-0F39-4B54-A165-428494FA4F69" Type="TrashFolder" Created="2022-02-13 10:49:29 +0300" Modified="2022-02-13 10:49:29 +0300">
             <Title>Trash</Title>
             <MetaData>
                 <IncludeInCompile>Yes</IncludeInCompile>
             </MetaData>
             <Children>
-                <BinderItem UUID="B196AFE4-BDA7-4712-B820-C49C3993A334" Type="Folder" Created="2022-02-13 13:54:23 +0200" Modified="2022-02-13 13:54:23 +0200">
+                <BinderItem UUID="B196AFE4-BDA7-4712-B820-C49C3993A334" Type="Folder" Created="2022-02-13 13:54:23 +0300" Modified="2022-02-13 13:54:23 +0300">
                     <MetaData>
                         <IncludeInCompile>Yes</IncludeInCompile>
                     </MetaData>
@@ -193,11 +202,11 @@
     <ProjectTargets Notify="No">
         <DraftTarget Type="Words" CountIncludedOnly="Yes" CurrentCompileGroupOnly="No" Deadline="2022-02-13 10:49:29 +0200" IgnoreDeadline="Yes">0</DraftTarget>
         <SessionTarget Type="Words" CountDraftOnly="No" AllowNegatives="No" ResetType="Time" ResetTime="01:00" DeterminedFromDeadline="No" CanWriteOnDeadlineDate="Yes" WritingDays="">0</SessionTarget>
-        <PreviousSession Words="1413" Characters="8173" Date="2022-03-26 20:29:51 +0200"/>
+        <PreviousSession Words="0" Characters="0" Date="2022-04-03 13:26:36 +0300"/>
     </ProjectTargets>
-    <RecentWritingHistory Date="2022-03-26 00:00:00 +0200">
-        <DraftWordCount>1413</DraftWordCount>
-        <DraftCharCount>8173</DraftCharCount>
+    <RecentWritingHistory Date="2022-04-03 00:00:00 +0300">
+        <DraftWordCount>0</DraftWordCount>
+        <DraftCharCount>0</DraftCharCount>
         <OtherWordCount>0</OtherWordCount>
         <OtherCharCount>0</OtherCharCount>
     </RecentWritingHistory>
