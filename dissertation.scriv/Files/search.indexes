@@ -156,7 +156,7 @@ Images Processing
 We wanted to use a stable and reliable tool for images in order to extract elements of them plus the color ID of the pixels. There was no previous experience about it so we started searching in Google. We ended up in RapidAPI.com again where we found quite a few APIs that were only analyzing the similarity between two or more images or giving data about the image like the coding of the image etc. Some of these APIs were: Face Similarity, Similarity, CLIP Text-Image Image-Text Similarity. They were all instable and unreliable with results that was easy to prove wrong simply with a glimpse of a naked eye.
 Vision API
 So we ended up with a Google solution with which we could process the images for colors, faces and emotions. The service for all of these is called “Vision API”. We used python to extract these information.
-More specifically, one python script was devised in order to extract the faces number (if any) in all of the pictures. 
+More specifically, one python script (python version: 3.10) was devised in order to extract the faces number (if any) in all of the pictures. 
 Another one was written so we could fetch the feelings in the faces of each picture. Vision API returned a possibility for each of four feelings inside each photo for every face there. The 4 feelings are: Joy, Angry, Sorrow and Surprice. These data were not well suited for SPSS so we dicided to manipulate in an excel file and the final SPSS data had a boolean field for the presence of each of the 4 feelings. This means that if even 1 face in a picture had a possibility or certainty of showing Joy, then Joy field was True. Same for the rest of the feelings.
 After the feelings and the number of faces, we started mining color information. Vision Api has another endpoint that returns the 5 dominant colors of each picture. Again, as with faces numbers and feelings, a TXT file with the image URLs was parsed by a python script and then was fed into the Vision Api for processing. Again, because of SPSS limitations, we kept only the most dominant color in hex format. Of course the result was thousands of unique HEX colorcodes that could not offer anything in any statistical analysis. This is where we realised that we had to classify the colors.
 Restrictions with images
@@ -176,9 +176,11 @@ Html4_color
 
 Of course no final result got harmed cause there was case selection in any statistical analysis that involved any of these variables.
 Color Classification
-The creation of an AI machine learning algorithm from scratch was way beyond the scope of this project so we used a pre-made Python module that did the job in a great way. This module had a funciton to classify according to both css3 or HTML4 classification of colors. The css3 classification (https://drafts.csswg.org/css-color-3/) was used to create visual treemaps for each company and collectively. This way, we can take a look at the most frequent colors that were used in the images. The downsize of this, was that css3 has more than 100 colors and that way we wouldnt be able to make a statistical analysis inside the SPSS. This is why we used the HTML4 coding that has less than 20 and this one was used for our statictial analysis procedure.
+The creation of an AI machine learning algorithm from scratch was way beyond the scope of this project so we used a pre-made Python module (webcolors - https://pypi.org/project/webcolors/) that did the job in a great way. This module had a funciton to classify according to both css3 or HTML4 classification of colors. The css3 classification (https://drafts.csswg.org/css-color-3/) was used to create visual treemaps for each company and collectively. This way, we can take a look at the most frequent colors that were used in the images. The downsize of this, was that css3 has more than 100 colors and that way we wouldnt be able to make a statistical analysis inside the SPSS. This is why we used the HTML4 coding that has less than 20 and this one was used for our statictial analysis procedure.
 Eventually, we ended up with only 16 unique colors for html4 and 124 for css3.
 Final SPSS-ready xlsx file
+	The software used for the statistical analysis was IBM’s SPSS 27 with the basic package.
+
 To summarize the full procedure:
 Mining the linkedin posts with phantombuster and exporting the reults in xlsx
 Feeding the mined posts’ text contents in the exact order into the readable api.
@@ -291,6 +293,7 @@ Numeric Value of Nominal Type (e.g. 1 = aqua, 2 = black etc) blanks signify the 
 Number of Hashtags in Post Text
 Simple count of hashtags inside the post
 
+
  
  
 
@@ -302,6 +305,8 @@ https://drafts.csswg.org/css-color-3/
 Για τον σμογκ και τον φλες πως τα χωρίσαμε σε εύκολο μέτριο δύσκολο
 Πώς καταλήξαμε σε αυτές τις εταιρίες
 Να αναφέρω τον πίνακα με τα σόσιαλ των εταιριών
+Να προσθέσω έκδοση σπσσ και παύθον
+Πάηθον να προσθέσω το μόντουλ που χρησιμοποίησα
 
 </Text>
         </Document>
@@ -457,6 +462,9 @@ thank you.</Text>
             <Text>Research Hypotheses
 
 </Text>
+        </Document>
+        <Document ID="F2EB7059-B3C9-487F-BD70-3B567B28CD64">
+            <Title>Treemaps</Title>
         </Document>
     </Documents>
 </SearchIndexes>

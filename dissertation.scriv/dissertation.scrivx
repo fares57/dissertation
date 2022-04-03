@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ScrivenerProject Template="No" Version="2.0" Identifier="351921F4-A161-4183-9AB6-4D4771A7242D" Creator="SCRWIN-3.1.1.0" Device="LAPTOP-L9J78L8B" Modified="2022-04-03 13:26:36 +0300" ModID="ED5DBAD3-5703-4D4E-9F51-33815ED5AC3B">
+<ScrivenerProject Template="No" Version="2.0" Identifier="351921F4-A161-4183-9AB6-4D4771A7242D" Creator="SCRWIN-3.1.1.0" Device="LAPTOP-L9J78L8B" Modified="2022-04-03 18:39:01 +0300" ModID="DAF4831B-CC8B-4983-AB02-D2CD50A38685">
     <Binder>
         <BinderItem UUID="441E5FAB-4419-4A3D-A165-F5629866B83B" Type="DraftFolder" Created="2022-02-13 10:49:29 +0300" Modified="2022-02-13 13:54:52 +0300">
             <Title>DISSERTATION</Title>
@@ -25,13 +25,13 @@
                                 <TextSelection>18,0</TextSelection>
                             </TextSettings>
                         </BinderItem>
-                        <BinderItem UUID="7882929E-AB7F-443F-B363-07250D5C53C5" Type="Text" Created="2022-03-23 18:49:47 +0300" Modified="2022-03-27 16:32:58 +0300">
+                        <BinderItem UUID="7882929E-AB7F-443F-B363-07250D5C53C5" Type="Text" Created="2022-03-23 18:49:47 +0300" Modified="2022-04-03 18:28:54 +0300">
                             <Title>Linkedin Scraping</Title>
                             <MetaData>
                                 <IncludeInCompile>Yes</IncludeInCompile>
                             </MetaData>
                             <TextSettings>
-                                <TextSelection Caret="12687">12563,124</TextSelection>
+                                <TextSelection>13054,0</TextSelection>
                             </TextSettings>
                         </BinderItem>
                         <BinderItem UUID="4817D7D6-C033-41FE-9333-1EEA1F36AD13" Type="Text" Created="2022-03-27 15:42:09 +0300" Modified="2022-03-27 15:58:03 +0300">
@@ -41,6 +41,15 @@
                             </MetaData>
                             <TextSettings>
                                 <TextSelection>714,0</TextSelection>
+                            </TextSettings>
+                        </BinderItem>
+                        <BinderItem UUID="F2EB7059-B3C9-487F-BD70-3B567B28CD64" Type="Text" Created="2022-04-03 18:10:46 +0300" Modified="2022-04-03 18:10:53 +0300">
+                            <Title>Treemaps</Title>
+                            <MetaData>
+                                <IncludeInCompile>Yes</IncludeInCompile>
+                            </MetaData>
+                            <TextSettings>
+                                <TextSelection>0,0</TextSelection>
                             </TextSettings>
                         </BinderItem>
                     </Children>
@@ -202,11 +211,11 @@
     <ProjectTargets Notify="No">
         <DraftTarget Type="Words" CountIncludedOnly="Yes" CurrentCompileGroupOnly="No" Deadline="2022-02-13 10:49:29 +0200" IgnoreDeadline="Yes">0</DraftTarget>
         <SessionTarget Type="Words" CountDraftOnly="No" AllowNegatives="No" ResetType="Time" ResetTime="01:00" DeterminedFromDeadline="No" CanWriteOnDeadlineDate="Yes" WritingDays="">0</SessionTarget>
-        <PreviousSession Words="0" Characters="0" Date="2022-04-03 13:26:36 +0300"/>
+        <PreviousSession Words="36" Characters="248" Date="2022-04-03 18:39:01 +0300"/>
     </ProjectTargets>
     <RecentWritingHistory Date="2022-04-03 00:00:00 +0300">
-        <DraftWordCount>0</DraftWordCount>
-        <DraftCharCount>0</DraftCharCount>
+        <DraftWordCount>36</DraftWordCount>
+        <DraftCharCount>248</DraftCharCount>
         <OtherWordCount>0</OtherWordCount>
         <OtherCharCount>0</OtherCharCount>
     </RecentWritingHistory>
