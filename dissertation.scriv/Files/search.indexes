@@ -137,6 +137,7 @@ This field returns the number of views a post received. Since no account was bel
 These data acted as a base for the rest of the mining regarding image and text properties.
 Readability    Next step was to calculate the readability for each post’s content. We started by testing free or freemium apis on the RapidAPI.com platform in order to find something reliable. Due to the cost structure of these APIs, we decide to call it a day and choose a SAAS solution with an easy to use interface.     For this, we used another web service, called https://readable.com/. Readable offers a wide range of readability indices but we chose to use SMOG (because USDA advices the use of it in the drugs’ leaflets) and Flesch Kincaid Grade Level because it’s the most popular and SMOG is not very accurate with small texts.
      Again, a CSV with the content of each post was fed (wherever text content existed) to the platform and a final CSV with all the indices was returned from which only SMOG and Flesch were used as explained above.
+	We decided to use both SMOG and Flesch-Kincaid Grade Level in our thesis because SMOG, eventhough officially suitable for healthcare material, it is supposed to be working better in texts with more than 30 sentences Something that it’s virtually impossible to come across in a LinkedIn post. 
      We ended up with 2 different numerical variables of scale type. This would be hard if we wanted to have some descriptive statistics so we decide to further classify both indices according to an “easy-medium-hard” rating. More specifically, for SMOG this formula was used in our excel file: =IF(G3&lt;=9,&quot;EASY&quot;,IF(G3&lt;=14,&quot;MEDIUM&quot;,&quot;HARD&quot;)), while for FKGL, =IF(I3&lt;=6,&quot;EASY&quot;,IF(I3&lt;=12,&quot;MEDIUM&quot;,&quot;HARD&quot;)) giving us the following table:
 
 
@@ -156,8 +157,16 @@ Images Processing
 We wanted to use a stable and reliable tool for images in order to extract elements of them plus the color ID of the pixels. There was no previous experience about it so we started searching in Google. We ended up in RapidAPI.com again where we found quite a few APIs that were only analyzing the similarity between two or more images or giving data about the image like the coding of the image etc. Some of these APIs were: Face Similarity, Similarity, CLIP Text-Image Image-Text Similarity. They were all instable and unreliable with results that was easy to prove wrong simply with a glimpse of a naked eye.
 Vision API
 So we ended up with a Google solution with which we could process the images for colors, faces and emotions. The service for all of these is called “Vision API”. We used python to extract these information.
-More specifically, one python script (python version: 3.10) was devised in order to extract the faces number (if any) in all of the pictures. 
+More specifically, one python script (python version: 3.10) was devised in order to extract the faces number (if any) in all of the pictures. The maximum number of detected faces is 10.
 Another one was written so we could fetch the feelings in the faces of each picture. Vision API returned a possibility for each of four feelings inside each photo for every face there. The 4 feelings are: Joy, Angry, Sorrow and Surprice. These data were not well suited for SPSS so we dicided to manipulate in an excel file and the final SPSS data had a boolean field for the presence of each of the 4 feelings. This means that if even 1 face in a picture had a possibility or certainty of showing Joy, then Joy field was True. Same for the rest of the feelings.
+
+#
+We can see an example of what it was returned after our own process. Here you see the number “1”, telling us that Google Vision Api found 1 face whithout prominent emotions.
+
+#
+Here is another example where we can see the presence of Joy (very_likely) in the face of one person.
+
+
 After the feelings and the number of faces, we started mining color information. Vision Api has another endpoint that returns the 5 dominant colors of each picture. Again, as with faces numbers and feelings, a TXT file with the image URLs was parsed by a python script and then was fed into the Vision Api for processing. Again, because of SPSS limitations, we kept only the most dominant color in hex format. Of course the result was thousands of unique HEX colorcodes that could not offer anything in any statistical analysis. This is where we realised that we had to classify the colors.
 Restrictions with images
 We faced a major restriction when it came to images. We realised that we could only access the posts that had an image that belonged to the linkedin domain, i.e. posts with images, or the first frame of a gif. If it was an image of an external URL, phantombuster returned a “not accessible” blank page when opening that image URL. Out of 6523 images, a total of 3525 were had to be classified as “Not Accessible” This restriction influenced the following metrics: 
@@ -176,6 +185,8 @@ Html4_color
 
 Of course no final result got harmed cause there was case selection in any statistical analysis that involved any of these variables.
 Color Classification
+ 
+As discussed previously, we used “webcolors” to classify the dominant colors extracted from the images by using the Vision API of Google which gave us thousands of different hex color codes. In the final SPSS we used the HTML4 protocol in order to classify the colors and get 16 different values. But, outside our statistical analysis, we also used the CSS3 protocol in order to create some visual representation aids to understand the colors used in a better way. We decided to create these treemaps by using the Plotly module for Python (https://plotly.com/python/plotly-express/) . 
 The creation of an AI machine learning algorithm from scratch was way beyond the scope of this project so we used a pre-made Python module (webcolors - https://pypi.org/project/webcolors/) that did the job in a great way. This module had a funciton to classify according to both css3 or HTML4 classification of colors. The css3 classification (https://drafts.csswg.org/css-color-3/) was used to create visual treemaps for each company and collectively. This way, we can take a look at the most frequent colors that were used in the images. The downsize of this, was that css3 has more than 100 colors and that way we wouldnt be able to make a statistical analysis inside the SPSS. This is why we used the HTML4 coding that has less than 20 and this one was used for our statictial analysis procedure.
 Eventually, we ended up with only 16 unique colors for html4 and 124 for css3.
 Final SPSS-ready xlsx file
@@ -227,7 +238,7 @@ Numeric Value (e.g. 1 = abbott, 2 = amgen etc)
 postUrl
 The URL of the post
 Type
-The type of the post. Possible values: Article, image, poll, text, live video, video (external source), video (internal source)
+The type of the post. Possible values: Article, image, poll, text, live video, video (external source), video (internal source). Linkedin source video types are the posts that have an uploaded video. External source video types are the post that have a link to a video platform (usually YT)
 post_type
 Numeric Values (e.g. 1 = artile, 2 = image etc)
 word count
@@ -285,9 +296,9 @@ TRUE/FALSE/No Image (not accessible ones were classified to FALSE, so we were se
 brand_name_photo_text_spss
 Numeric Value of Nominal Type (=IF(AE6721=&quot;TRUE&quot;,1,0)). Again, case selection based on other variables helped with results that were “0” but yet belonged to not accessible or “no image” posts
 Dominant Color Names in Image
-Css3 color classification (no image, not accessible and wrong color code included)
+Css3 color classification (blanks for no image, not accessible and wrong color code included). This is why we get less values than the sum of image post type posts. Because some images were either not accessible or returned a wrong hex color code when parsing.
 html4_color
-html4 color classification (blanks for no image, not accessible and wrong color code included)
+html4 color classification (blanks for no image, not accessible and wrong color code included). This is why we get less values than the sum of image post type posts. Because some images were either not accessible or returned a wrong hex color code when parsing.
 html4_color_spss
 Numeric Value of Nominal Type (e.g. 1 = aqua, 2 = black etc) blanks signify the wrong color codes, not accessible and no image
 Number of Hashtags in Post Text
