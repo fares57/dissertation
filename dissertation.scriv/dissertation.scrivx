@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ScrivenerProject Template="No" Version="2.0" Identifier="351921F4-A161-4183-9AB6-4D4771A7242D" Creator="SCRWIN-3.1.1.0" Device="LAPTOP-L9J78L8B" Modified="2022-04-16 14:35:27 +0300" ModID="D6647A77-25C8-4C19-8742-128C597210F8">
+<ScrivenerProject Template="No" Version="2.0" Identifier="351921F4-A161-4183-9AB6-4D4771A7242D" Creator="SCRWIN-3.1.1.0" Device="LAPTOP-L9J78L8B" Modified="2022-04-19 20:32:27 +0300" ModID="D6647A77-25C8-4C19-8742-128C597210F8">
     <Binder>
         <BinderItem UUID="441E5FAB-4419-4A3D-A165-F5629866B83B" Type="DraftFolder" Created="2022-02-13 10:49:29 +0300" Modified="2022-02-13 13:54:52 +0300">
             <Title>DISSERTATION</Title>
@@ -22,7 +22,7 @@
                                 <IncludeInCompile>Yes</IncludeInCompile>
                             </MetaData>
                             <TextSettings>
-                                <TextSelection>928,0</TextSelection>
+                                <TextSelection Caret="2915">0,2915</TextSelection>
                             </TextSettings>
                         </BinderItem>
                         <BinderItem UUID="7882929E-AB7F-443F-B363-07250D5C53C5" Type="Text" Created="2022-03-23 18:49:47 +0300" Modified="2022-04-16 14:35:26 +0300">
@@ -31,7 +31,7 @@
                                 <IncludeInCompile>Yes</IncludeInCompile>
                             </MetaData>
                             <TextSettings>
-                                <TextSelection>14550,0</TextSelection>
+                                <TextSelection Caret="15225">0,15225</TextSelection>
                             </TextSettings>
                         </BinderItem>
                         <BinderItem UUID="4817D7D6-C033-41FE-9333-1EEA1F36AD13" Type="Text" Created="2022-03-27 15:42:09 +0300" Modified="2022-03-27 15:58:03 +0300">
@@ -40,7 +40,7 @@
                                 <IncludeInCompile>Yes</IncludeInCompile>
                             </MetaData>
                             <TextSettings>
-                                <TextSelection Caret="1232">1225,7</TextSelection>
+                                <TextSelection Caret="1569">0,1569</TextSelection>
                             </TextSettings>
                         </BinderItem>
                         <BinderItem UUID="F2EB7059-B3C9-487F-BD70-3B567B28CD64" Type="Text" Created="2022-04-03 18:10:46 +0300" Modified="2022-04-03 18:10:53 +0300">
@@ -211,11 +211,11 @@
     <ProjectTargets Notify="No">
         <DraftTarget Type="Words" CountIncludedOnly="Yes" CurrentCompileGroupOnly="No" Deadline="2022-02-13 10:49:29 +0200" IgnoreDeadline="Yes">0</DraftTarget>
         <SessionTarget Type="Words" CountDraftOnly="No" AllowNegatives="No" ResetType="Time" ResetTime="01:00" DeterminedFromDeadline="No" CanWriteOnDeadlineDate="Yes" WritingDays="">0</SessionTarget>
-        <PreviousSession Words="93" Characters="508" Date="2022-04-16 14:35:27 +0300"/>
+        <PreviousSession Words="0" Characters="0" Date="2022-04-19 20:32:27 +0300"/>
     </ProjectTargets>
-    <RecentWritingHistory Date="2022-04-16 00:00:00 +0300">
-        <DraftWordCount>93</DraftWordCount>
-        <DraftCharCount>508</DraftCharCount>
+    <RecentWritingHistory Date="2022-04-19 00:00:00 +0300">
+        <DraftWordCount>0</DraftWordCount>
+        <DraftCharCount>0</DraftCharCount>
         <OtherWordCount>0</OtherWordCount>
         <OtherCharCount>0</OtherCharCount>
     </RecentWritingHistory>
